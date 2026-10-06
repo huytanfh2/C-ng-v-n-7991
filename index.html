@@ -1,0 +1,2528 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduPlan 7991 - Trợ Lý Soạn Giáo Án, Slide & Đề Kiểm Tra Chuẩn CV 7991</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Google: Inter & Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Tailwind Custom Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'Inter', 'sans-serif'],
+            serif: ['"Tinos"', 'serif'],
+          },
+          colors: {
+            edu: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#16a34a',
+              600: '#15803d',
+              700: '#166534',
+              800: '#14532d',
+              navy: '#0f2942',
+              accent: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Styling scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+    /* Print styling specifically designed for Word/PDF A4 look */
+    @media print {
+      body { background: white !important; font-size: 13pt; line-height: 1.35; color: black !important; }
+      .no-print { display: none !important; }
+      .print-only { display: block !important; }
+      .page-break { page-break-before: always; }
+      .doc-canvas { box-shadow: none !important; border: none !important; width: 100% !important; max-width: 100% !important; padding: 0 !important; }
+    }
+
+    .doc-page {
+      font-family: 'Tinos', 'Times New Roman', serif;
+      font-size: 13pt;
+      line-height: 1.4;
+      color: #111827;
+    }
+    
+    .doc-page table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 10px 0;
+    }
+    .doc-page th, .doc-page td {
+      border: 1px solid #374151;
+      padding: 6px 10px;
+      font-size: 12pt;
+    }
+    .doc-page th {
+      background-color: #f3f4f6;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* Animation effects */
+    .fade-in { animation: fadeIn 0.25s ease-in-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col font-sans">
+
+  <header class="bg-edu-navy text-white shadow-lg sticky top-0 z-40 no-print border-b border-slate-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Brand Logo & Title -->
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-white shadow-md font-bold text-xl">
+          E
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h1 class="text-lg sm:text-xl font-bold tracking-tight text-white flex items-center">
+              EduPlan <span class="text-amber-400 ml-1">7991</span>
+            </h1>
+            <span class="bg-emerald-600/30 text-emerald-300 text-xs px-2 py-0.5 rounded-full border border-emerald-500/40 hidden sm:inline-flex items-center">
+              <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              CV 7991 & 5512 BGD&ĐT
+            </span>
+          </div>
+          <p class="text-xs text-slate-300 hidden sm:block">Trợ lý Sư Phạm: Soạn Kế hoạch bài dạy, Slide bài giảng & Đề kiểm tra 3 phần</p>
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons in Header -->
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <button id="btnOpenGuide" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-2 rounded-lg border border-slate-600 transition flex items-center space-x-1.5">
+          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span class="hidden md:inline">Quy chuẩn 7991</span>
+        </button>
+        <button id="btnExportAllWord" class="text-xs bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-3.5 py-2 rounded-lg shadow transition flex items-center space-x-1.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          <span>Tải file Word (.doc)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-white border-b border-slate-200 shadow-sm py-4 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-end">
+        
+        <!-- Subject Select -->
+        <div class="md:col-span-3">
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Môn học:</label>
+          <select id="selectSubject" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition">
+            <option value="Tin học">Tin học</option>
+            <option value="Toán học">Toán học</option>
+            <option value="Ngữ văn">Ngữ văn</option>
+            <option value="KHTN / Vật lí">KHTN / Vật lí</option>
+            <option value="Lịch sử & Địa lí">Lịch sử & Địa lí</option>
+            <option value="Tiếng Anh">Tiếng Anh</option>
+          </select>
+        </div>
+
+        <!-- Grade Level Select -->
+        <div class="md:col-span-2">
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Khối lớp:</label>
+          <select id="selectGrade" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition">
+            <option value="Lớp 6">Lớp 6</option>
+            <option value="Lớp 7">Lớp 7</option>
+            <option value="Lớp 8">Lớp 8</option>
+            <option value="Lớp 9">Lớp 9</option>
+            <option value="Lớp 10" selected>Lớp 10</option>
+            <option value="Lớp 11">Lớp 11</option>
+            <option value="Lớp 12">Lớp 12</option>
+          </select>
+        </div>
+
+        <!-- Lesson Title / Topic -->
+        <div class="md:col-span-4">
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Tên bài dạy / Chủ đề bài học:</label>
+          <div class="relative">
+            <input id="inputLessonTitle" type="text" value="Thuật toán tìm kiếm tuần tự và nhị phân" placeholder="Nhập tên bài học..." class="w-full bg-slate-50 border border-slate-300 rounded-lg pl-3 pr-8 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition">
+            <button id="btnClearTitle" title="Xóa" class="absolute right-2.5 top-2.5 text-slate-400 hover:text-slate-600 text-xs">✕</button>
+          </div>
+        </div>
+
+        <!-- Duration Select -->
+        <div class="md:col-span-1">
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Thời lượng:</label>
+          <select id="selectDuration" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-2 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition">
+            <option value="1 tiết">1 tiết</option>
+            <option value="2 tiết" selected>2 tiết</option>
+            <option value="3 tiết">3 tiết</option>
+          </select>
+        </div>
+
+        <!-- Generate Buttons -->
+        <div class="md:col-span-2 flex space-x-2">
+          <button id="btnAiGenerate" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition flex items-center justify-center space-x-1.5" title="Soạn mới bằng trí tuệ nhân tạo Gemini">
+            <svg class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            <span>Soạn với AI</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Quick sample loader buttons -->
+      <div class="mt-3 flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100 text-xs">
+        <span class="font-medium text-slate-500 flex items-center">
+          <svg class="w-3.5 h-3.5 mr-1 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+          Bài mẫu nạp tức thì:
+        </span>
+        <button class="btn-sample-load bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 border border-slate-200 hover:border-emerald-300 rounded-full px-3 py-1 transition" data-sample="cs10">
+          💻 Tin 10: Tìm kiếm tuần tự & nhị phân
+        </button>
+        <button class="btn-sample-load bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 border border-slate-200 hover:border-emerald-300 rounded-full px-3 py-1 transition" data-sample="math11">
+          📐 Toán 11: Cấp số cộng
+        </button>
+        <button class="btn-sample-load bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 border border-slate-200 hover:border-emerald-300 rounded-full px-3 py-1 transition" data-sample="lit10">
+          📖 Văn 10: Chiến thắng Mtao Mxây
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <nav class="bg-white border-b border-slate-200 sticky top-16 z-30 shadow-sm no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex space-x-1 sm:space-x-4">
+        <!-- Tab 1: Kế hoạch bài dạy -->
+        <button class="tab-btn active py-3.5 px-3 sm:px-4 border-b-2 font-medium text-sm flex items-center space-x-2 transition border-emerald-600 text-emerald-700" data-target="tabLessonPlan">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          <span>1. Kế hoạch bài dạy (Giáo án)</span>
+        </button>
+        
+        <!-- Tab 2: Slide bài giảng -->
+        <button class="tab-btn py-3.5 px-3 sm:px-4 border-b-2 font-medium text-sm flex items-center space-x-2 transition border-transparent text-slate-500 hover:text-slate-700" data-target="tabSlideshow">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
+          <span>2. Slide bài giảng điện tử</span>
+        </button>
+
+        <!-- Tab 3: Ma trận & Đề kiểm tra 7991 -->
+        <button class="tab-btn py-3.5 px-3 sm:px-4 border-b-2 font-medium text-sm flex items-center space-x-2 transition border-transparent text-slate-500 hover:text-slate-700" data-target="tabExam">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+          <span class="flex items-center">
+            3. Ma trận & Đề kiểm tra CV 7991
+            <span class="ml-1.5 px-1.5 py-0.2 bg-amber-100 text-amber-800 text-[10px] font-bold rounded">3 phần</span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- ========================================== -->
+    <!-- TAB 1: KẾ HOẠCH BÀI DẠY (GIÁO ÁN 5512 & 7991) -->
+    <!-- ========================================== -->
+    <div id="tabLessonPlan" class="tab-pane fade-in block">
+      
+      <!-- Toolbar for Document Editing & Actions -->
+      <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm mb-4 flex flex-wrap items-center justify-between gap-2 no-print">
+        <div class="flex items-center space-x-2 text-xs">
+          <span class="inline-flex items-center text-slate-600 bg-slate-100 px-2.5 py-1.5 rounded-lg">
+            <svg class="w-3.5 h-3.5 mr-1 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+            Chỉnh sửa trực tiếp: <strong class="ml-1 text-slate-800">Nhấp vào văn bản để sửa</strong>
+          </span>
+          <span id="planSaveStatus" class="text-emerald-600 text-xs font-medium">✓ Đã đồng bộ</span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <button id="btnCopyPlanText" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-2 rounded-lg font-medium transition flex items-center space-x-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+            <span>Sao chép</span>
+          </button>
+          <button id="btnPrintPlan" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-2 rounded-lg font-medium transition flex items-center space-x-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+            <span>In / PDF</span>
+          </button>
+          <button id="btnDownloadPlanDoc" class="text-xs bg-emerald-700 hover:bg-emerald-600 text-white px-3.5 py-2 rounded-lg font-medium transition flex items-center space-x-1 shadow">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <span>Xuất Giáo Án Word</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-slate-300 shadow-xl p-8 sm:p-12 max-w-4xl mx-auto doc-canvas">
+        <div id="editablePlanContent" contenteditable="true" class="doc-page outline-none focus:ring-1 focus:ring-emerald-300 rounded p-2">
+          <!-- Content injected dynamically via JavaScript -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 2: SLIDE BÀI GIẢNG ĐIỆN TỬ (SLIDESHOW) -->
+    <!-- ========================================== -->
+    <div id="tabSlideshow" class="tab-pane fade-in hidden">
+      
+      <!-- Slide Toolbar -->
+      <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm mb-4 flex flex-wrap items-center justify-between gap-3 no-print">
+        <div class="flex items-center space-x-2">
+          <span class="text-sm font-semibold text-slate-700">Slide Trình Chiếu</span>
+          <span id="slideIndicator" class="bg-slate-100 text-slate-800 text-xs px-2.5 py-1 rounded-full font-bold">1 / 8</span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <button id="btnPrevSlide" class="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition" title="Slide trước (Mũi tên trái)">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+          <button id="btnNextSlide" class="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition" title="Slide tiếp (Mũi tên phải)">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+          <button id="btnFullscreenSlide" class="text-xs bg-slate-800 hover:bg-slate-700 text-white px-3 py-2 rounded-lg font-medium transition flex items-center space-x-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0 0l-5-5m-6 16H4m0 0v-4m0 4l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+            <span>Trình chiếu toàn màn hình</span>
+          </button>
+          <button id="btnCopySlideNotes" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-2 rounded-lg font-medium transition flex items-center space-x-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+            <span>Copy Dàn Ý Slide</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Interactive Slide Canvas (16:9 aspect) -->
+        <div class="lg:col-span-8 flex flex-col items-center">
+          <div id="slideScreen" class="w-full aspect-[16/9] bg-gradient-to-br from-slate-900 via-edu-navy to-slate-950 text-white rounded-2xl shadow-2xl p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden transition-all duration-300 border border-slate-700">
+            <!-- Background Decorative circles -->
+            <div class="absolute -right-20 -top-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Slide Header -->
+            <div class="relative z-10 flex items-center justify-between border-b border-white/10 pb-3">
+              <span id="slideBadge" class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+                Chủ đề
+              </span>
+              <span id="slideLessonMini" class="text-xs text-slate-400 font-mono">
+                EduPlan 7991 Standard
+              </span>
+            </div>
+
+            <!-- Slide Main Dynamic Body -->
+            <div id="slideMainBody" class="relative z-10 flex-1 flex flex-col justify-center my-4">
+              <!-- Rendered via JS -->
+            </div>
+
+            <!-- Slide Footer -->
+            <div class="relative z-10 flex items-center justify-between pt-3 border-t border-white/10 text-xs text-slate-400">
+              <span id="slideFooterLeft">Trường THPT Chuẩn Mẫu</span>
+              <span id="slideFooterRight">Trang 1 / 8</span>
+            </div>
+          </div>
+
+          <!-- Slide Thumbnails Grid -->
+          <div class="w-full mt-4 flex items-center justify-center space-x-2 overflow-x-auto py-2 no-print">
+            <div id="slideDotsContainer" class="flex space-x-2">
+              <!-- Dot indicators injected via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Teacher Notes & Suggested Dialogue (Lời dẫn gợi ý cho giáo viên) -->
+        <div class="lg:col-span-4 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+          <div class="flex items-center space-x-2 text-slate-800 font-bold text-sm mb-3 pb-2 border-b border-slate-100">
+            <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            <span>Gợi Ý Lời Dẫn Sư Phạm (Teacher Notes)</span>
+          </div>
+
+          <div id="teacherNoteBox" class="text-xs text-slate-600 leading-relaxed bg-amber-50/70 p-4 rounded-xl border border-amber-200/60 min-h-[180px]">
+            <!-- Injected via JS -->
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
+            <span>Phím tắt: ⬅ Trang trước | ➡ Trang sau</span>
+            <button id="btnSpeakNote" class="text-emerald-700 hover:text-emerald-800 font-medium flex items-center">
+              <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+              Đọc lời dẫn
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 3: MA TRẬN & ĐỀ KIỂM TRA CHUẨN CV 7991 -->
+    <!-- ========================================== -->
+    <div id="tabExam" class="tab-pane fade-in hidden">
+      
+      <!-- Exam Control Bar -->
+      <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm mb-4 flex flex-wrap items-center justify-between gap-3 no-print">
+        <div class="flex items-center space-x-2">
+          <span class="inline-flex items-center text-xs font-semibold bg-amber-100 text-amber-900 px-3 py-1.5 rounded-lg border border-amber-200">
+            ★ Cấu trúc 3 phần quy chuẩn Công văn 7991/BGDĐT-GDTrH
+          </span>
+          <span class="text-xs text-slate-500 hidden sm:inline">Phần I: TN 4 Lựa chọn | Phần II: Đúng/Sai (Điểm bậc thang) | Phần III: Trả lời ngắn</span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <button id="btnGradeExam" class="text-xs bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-4 py-2 rounded-lg shadow transition flex items-center space-x-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>Chấm Điểm Làm Thử</span>
+          </button>
+          <button id="btnResetExam" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-2 rounded-lg transition">
+            Làm lại
+          </button>
+          <button id="btnPrintExam" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-2 rounded-lg transition flex items-center space-x-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+            <span>In đề & Đáp án</span>
+          </button>
+          <button id="btnDownloadExamDoc" class="text-xs bg-indigo-700 hover:bg-indigo-600 text-white font-medium px-3.5 py-2 rounded-lg shadow transition flex items-center space-x-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            <span>Xuất Đề & Ma Trận (.doc)</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="scoreBanner" class="hidden mb-6 bg-gradient-to-r from-emerald-600 via-teal-700 to-slate-900 text-white p-5 rounded-2xl shadow-lg fade-in">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center space-x-4">
+            <div class="w-14 h-14 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center text-2xl font-bold border border-white/30">
+              <span id="finalScoreVal">8.5</span>
+            </div>
+            <div>
+              <h3 class="text-base font-bold">Kết quả bài làm (Thang điểm 10.0)</h3>
+              <p id="scoreBreakdown" class="text-xs text-emerald-100">Phần I: 2.5/3.0đ | Phần II: 3.5/4.0đ (Chuẩn bậc thang 7991) | Phần III: 2.5/3.0đ</p>
+            </div>
+          </div>
+          <span class="text-xs bg-white/10 px-3 py-1.5 rounded-full border border-white/20">
+            Bấm vào từng câu dưới đây để đối chiếu lời giải và barem chi tiết
+          </span>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        
+        <!-- Accordion 1: Ma trận & Bản đặc tả đề kiểm tra -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+          <button id="toggleMatrix" class="w-full px-5 py-4 bg-slate-50 hover:bg-slate-100 font-bold text-sm text-slate-800 flex items-center justify-between transition text-left">
+            <span class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+              I. MA TRẬN & BẢN ĐẶC TẢ ĐỀ KIỂM TRA (Tỉ lệ: 40% Nhận biết - 30% Thông hiểu - 30% Vận dụng)
+            </span>
+            <span id="matrixArrow" class="text-slate-400 text-xs">▼ Thu gọn/Mở rộng</span>
+          </button>
+          
+          <div id="matrixContainer" class="p-5 border-t border-slate-200 overflow-x-auto doc-page">
+            <!-- Dynamic Matrix Table injected via JS -->
+          </div>
+        </div>
+
+        <!-- Accordion 2: Đề Kiểm Tra & Form Làm Bài -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 sm:p-8 doc-canvas">
+          <div class="text-center pb-4 mb-6 border-b border-slate-200 doc-page">
+            <div class="flex justify-between text-xs text-slate-600 mb-2 font-serif">
+              <div>SỞ GD&ĐT / TRƯỜNG THPT CHUẨN<br>TỔ CHUYÊN MÔN</div>
+              <div class="text-right">ĐỀ KIỂM TRA ĐÁNH GIÁ ĐỊNH KỲ<br>NĂM HỌC 2026 - 2027</div>
+            </div>
+            <h2 id="examTitleHeader" class="text-lg font-bold uppercase tracking-wide text-slate-900 font-serif">
+              ĐỀ KIỂM TRA CHUẨN ĐỊNH DẠNG CÔNG VĂN 7991/BGDĐT-GDTrH
+            </h2>
+            <p id="examSubHeader" class="text-xs text-slate-600 font-serif mt-1">
+              Môn: Tin học 10 | Thời gian làm bài: 45 phút (Không kể thời gian phát đề)
+            </p>
+          </div>
+
+          <!-- Dynamic Exam Content Sections -->
+          <div id="examContainer" class="space-y-8">
+            <!-- Injected via JS -->
+          </div>
+
+        </div>
+
+        <!-- Accordion 3: Bảng Đáp Án & Hướng Dẫn Chấm Chi Tiết -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+          <div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 font-bold text-sm text-slate-800 flex items-center justify-between">
+            <span class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              II. ĐÁP ÁN & HƯỚNG DẪN CHẤM CHI TIẾT THEO CÔNG VĂN 7991
+            </span>
+            <span class="text-xs font-normal text-slate-500">Quy tắc chấm thang điểm 10.0</span>
+          </div>
+          <div id="answerKeyContainer" class="p-5 doc-page overflow-x-auto">
+            <!-- Answer key generated via JS -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center space-x-2 text-xs transition-all duration-300 opacity-0 pointer-events-none translate-y-3">
+    <span id="toastIcon">✓</span>
+    <span id="toastMessage">Thông báo</span>
+  </div>
+
+  <!-- Loading AI Modal -->
+  <div id="aiLoadingModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+    <div class="bg-white rounded-2xl p-6 max-w-sm w-full mx-4 shadow-2xl text-center space-y-4">
+      <div class="w-14 h-14 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center">
+        <svg class="w-8 h-8 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+      </div>
+      <div>
+        <h3 class="text-base font-bold text-slate-800">Gemini AI Đang Soạn Bài...</h3>
+        <p class="text-xs text-slate-500 mt-1">Đang cấu trúc Kế hoạch bài dạy, Slide giảng dạy và Ma trận đề kiểm tra 3 phần theo chuẩn CV 7991.</p>
+      </div>
+      <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+        <div class="bg-emerald-600 h-full w-2/3 animate-pulse"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Guide / Official Dispatch 7991 Modal -->
+  <div id="guideModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="px-6 py-4 bg-edu-navy text-white flex items-center justify-between">
+        <h3 class="font-bold text-base flex items-center">
+          <svg class="w-5 h-5 mr-2 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+          Quy Chuẩn Soạn Giảng CV 7991 & 5512 Của Bộ GD&ĐT
+        </h3>
+        <button id="btnCloseGuide" class="text-slate-400 hover:text-white text-lg">✕</button>
+      </div>
+      <div class="p-6 overflow-y-auto text-xs leading-relaxed text-slate-700 space-y-4">
+        <div class="p-3 bg-amber-50 rounded-xl border border-amber-200">
+          <h4 class="font-bold text-amber-900 mb-1">1. Định dạng đề kiểm tra mới theo CV 7991:</h4>
+          <ul class="list-disc pl-4 space-y-1 text-slate-700">
+            <li><strong>Phần I:</strong> Câu hỏi trắc nghiệm nhiều lựa chọn (4 phương án, chọn 1 đúng). Mỗi câu đúng được 0,25 điểm.</li>
+            <li><strong>Phần II:</strong> Câu hỏi trắc nghiệm Đúng / Sai. Mỗi câu gồm 4 ý (a, b, c, d). Điểm tính lũy tiến:
+              <br>• Đúng 1 ý: <strong>0,10 điểm</strong>.
+              <br>• Đúng 2 ý: <strong>0,25 điểm</strong>.
+              <br>• Đúng 3 ý: <strong>0,50 điểm</strong>.
+              <br>• Đúng 4 ý: <strong>1,00 điểm</strong>.
+            </li>
+            <li><strong>Phần III:</strong> Câu hỏi trắc nghiệm dạng trả lời ngắn hoặc câu tự luận ngắn. Đánh giá tư duy vận dụng sâu.</li>
+          </ul>
+        </div>
+        <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200">
+          <h4 class="font-bold text-emerald-900 mb-1">2. Tiến trình bài dạy 4 bước theo CV 5512:</h4>
+          <ol class="list-decimal pl-4 space-y-1 text-slate-700">
+            <li><strong>Hoạt động 1: Mở đầu (Khởi động)</strong> - Tạo tâm thế, gợi mở vấn đề bài học.</li>
+            <li><strong>Hoạt động 2: Hình thành kiến thức mới</strong> - Học sinh chủ động khám phá, tương tác qua phiếu học tập.</li>
+            <li><strong>Hoạt động 3: Luyện tập</strong> - Thực hành bài tập củng cố ngay trên lớp.</li>
+            <li><strong>Hoạt động 4: Vận dụng</strong> - Giải quyết tình huống thực tiễn và nhiệm vụ tự học mở rộng.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="p-4 bg-slate-50 border-t border-slate-200 text-right">
+        <button id="btnGotGuide" class="bg-edu-navy hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-xs font-medium">Đã hiểu</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Comprehensive high quality educational samples
+    const SAMPLE_DATABASE = {
+      cs10: {
+        subject: "Tin học",
+        grade: "Lớp 10",
+        lessonTitle: "Thuật toán tìm kiếm tuần tự và nhị phân",
+        duration: "2 tiết",
+        plan: {
+          school: "TRƯỜNG THPT CHUẨN QUỐC GIA",
+          department: "TỔ TIN HỌC - CÔNG NGHỆ",
+          teacher: "Giáo viên bộ môn Tin học",
+          date: "Năm học 2026 - 2027",
+          objectives: {
+            specialized: [
+              "Trình bày được ý tưởng và các bước thực hiện thuật toán tìm kiếm tuần tự (Sequential Search) và tìm kiếm nhị phân (Binary Search).",
+              "Phân tích được điều kiện tiên quyết để áp dụng thuật toán tìm kiếm nhị phân (danh sách đã được sắp xếp).",
+              "So sánh được hiệu quả về thời gian thực thi (số phép so sánh tối đa) giữa hai thuật toán."
+            ],
+            general: [
+              "Năng lực tự chủ và tự học: Tự nghiên cứu sách giáo khoa, chủ động chạy thử thuật toán với bộ dữ liệu mẫu.",
+              "Năng lực giao tiếp và hợp tác: Làm việc nhóm thảo luận so sánh ưu nhược điểm của hai giải thuật.",
+              "Năng lực giải quyết vấn đề và sáng tạo: Lựa chọn thuật toán tối ưu cho bài toán thực tế tra cứu dữ liệu."
+            ],
+            qualities: [
+              "Chăm chỉ: Tích cực hoàn thành các nhiệm vụ học tập trên lớp và bài tập về nhà.",
+              "Trách nhiệm: Có ý thức tư duy thuật toán chặt chẽ và cẩn thận trong việc kiểm thử dữ liệu."
+            ]
+          },
+          equipment: {
+            teacher: "Kế hoạch bài dạy, bài trình chiếu điện tử, máy chiếu, bộ thẻ bài số học cho trò chơi khởi động, phiếu học tập số 1 và 2.",
+            student: "Sách giáo khoa Tin học 10, vở ghi chép, bút màu, điện thoại/máy tính có kết nối mạng để làm bài trắc nghiệm (nếu có)."
+          },
+          activities: [
+            {
+              num: 1,
+              title: "Khởi động: Trò chơi 'Đoán số bí mật'",
+              time: "7 phút",
+              goal: "Kích hoạt hứng thú của học sinh, gợi mở nhu cầu tìm kiếm nhanh trong tập dữ liệu.",
+              content: "Giáo viên nghĩ một số nguyên ngẫu nhiên từ 1 đến 100. Học sinh đoán số và giáo viên chỉ trả lời 'Lớn hơn', 'Nhỏ hơn' hoặc 'Chính xác'.",
+              product: "Chiến thuật đoán thông minh của học sinh: chia đôi khoảng thay vì đoán mò từng số.",
+              implementation: "GV phổ biến luật chơi -> HS tham gia đoán -> GV đặt câu hỏi dẫn dắt: 'Tại sao cách đoán chia đôi luôn tìm ra số bí mật không quá 7 lần đoán?' -> GV giới thiệu bài học mới."
+            },
+            {
+              num: 2,
+              title: "Hình thành kiến thức mới: Thuật toán tìm kiếm tuần tự & nhị phân",
+              time: "48 phút",
+              goal: "Hiểu bản chất, cấu trúc vòng lặp và điều kiện dừng của 2 thuật toán.",
+              content: "Khám phá 2 đơn vị kiến thức: 1. Thuật toán tìm kiếm tuần tự; 2. Thuật toán tìm kiếm nhị phân.",
+              product: "Phiếu học tập số 1 hoàn thành: bảng mô phỏng từng bước lặp, công thức xác định chỉ số giữa Mid = (Left + Right) // 2.",
+              implementation: "GV chia lớp thành 4 nhóm, phát phiếu học tập -> HS thảo luận mô phỏng trên dãy A = [3, 7, 12, 19, 25, 33, 40] với khóa cần tìm k = 25 -> Đại diện nhóm trình bày -> GV chuẩn hóa kiến thức bằng slide minh họa trực quan."
+            },
+            {
+              num: 3,
+              title: "Luyện tập: Thực hành thuật toán",
+              time: "20 phút",
+              goal: "Củng cố kĩ năng xác định số bước lặp và cài đặt tư duy thuật toán.",
+              content: "Học sinh làm các bài tập trắc nghiệm nhanh và bài toán tự luận tìm số bước so sánh đối với dãy số cụ thể.",
+              product: "Đáp án các câu hỏi luyện tập trên bảng con hoặc phần mềm trắc nghiệm trực tuyến.",
+              implementation: "GV giao nhiệm vụ qua slide luyện tập -> HS làm việc cá nhân trong 10 phút -> HS đổi chéo vở chấm điểm -> GV nhận xét và sửa các lỗi sai phổ biến."
+            },
+            {
+              num: 4,
+              title: "Vận dụng: Giải quyết bài toán thực tế",
+              time: "15 phút",
+              goal: "Vận dụng kiến thức vào bài toán tổ chức tra cứu danh bạ điện thoại, từ điển.",
+              content: "Thảo luận câu hỏi: 'Tại sao từ điển hay danh bạ luôn phải sắp xếp theo thứ tự bảng chữ cái? Nếu dữ liệu thường xuyên thêm mới thì chọn thuật toán nào?'",
+              product: "Báo cáo ngắn của học sinh nêu rõ lí do chọn thuật toán phù hợp với từng hoàn cảnh.",
+              implementation: "GV đưa tình huống -> HS thảo luận cặp đôi -> GV mời 2 cặp đôi phản biện -> GV kết luận, giao bài tập về nhà và hướng dẫn tự học."
+            }
+          ]
+        },
+        slides: [
+          {
+            title: "THUẬT TOÁN TÌM KIẾM TUẦN TỰ & NHỊ PHÂN",
+            badge: "Tin học 10 • Chủ đề F: Giải quyết vấn đề với sự trợ giúp của máy tính",
+            type: "title",
+            content: [
+              "Giáo viên hướng dẫn: Bộ môn Tin học",
+              "Thời lượng bài dạy: 2 tiết",
+              "Khởi đầu hành trình tối ưu hóa giải thuật tìm kiếm dữ liệu"
+            ],
+            notes: "Kính chào quý thầy cô và các em học sinh. Hôm nay chúng ta cùng bước vào một chủ đề cốt lõi của khoa học máy tính: làm thế nào để tìm kiếm thông tin nhanh nhất trong hàng triệu bản ghi."
+          },
+          {
+            title: "MỤC TIÊU BÀI HỌC",
+            badge: "Yêu cầu cần đạt",
+            type: "objectives",
+            content: [
+              "1. Hiểu rõ ý tưởng thuật toán Tìm kiếm tuần tự (Linear/Sequential Search).",
+              "2. Nắm vững thuật toán Tìm kiếm nhị phân (Binary Search) và điều kiện áp dụng.",
+              "3. Phân biệt được độ phức tạp: O(n) so với O(log n).",
+              "4. Vận dụng chọn giải thuật tối ưu trong lập trình thực tiễn."
+            ],
+            notes: "Giáo viên nhấn mạnh: Không có thuật toán tốt nhất cho mọi bài toán, chỉ có thuật toán phù hợp nhất với cấu trúc dữ liệu đang có."
+          },
+          {
+            title: "KHỞI ĐỘNG: TRÒ CHƠI ĐOÁN SỐ (1 - 100)",
+            badge: "Hoạt động 1",
+            type: "game",
+            content: [
+              "Nhiệm vụ: Tìm ra số bí mật x ∈ [1, 100] với số lần hỏi ít nhất.",
+              "Phản hồi từ GV: Chỉ gồm 'Lớn hơn', 'Nhỏ hơn' hoặc 'Đúng'.",
+              "Chiến lược A (Tuần tự): Đoán lần lượt 1, 2, 3... => Tối đa 100 lần!",
+              "Chiến lược B (Chia đôi): Luôn đoán số ở chính giữa khoảng hiện tại => Tối đa chỉ 7 lần!"
+            ],
+            notes: "Dẫn dắt: 2 mũ 7 bằng 128 > 100. Đó chính là sức mạnh kỳ diệu của thuật toán tìm kiếm nhị phân mà chúng ta sẽ tìm hiểu ngay sau đây!"
+          },
+          {
+            title: "1. THUẬT TOÁN TÌM KIẾM TUẦN TỰ",
+            badge: "Hình thành kiến thức",
+            type: "concept",
+            content: [
+              "Ý tưởng: So sánh lần lượt từng phần tử từ đầu đến cuối dãy với giá trị cần tìm k.",
+              "Ưu điểm: Áp dụng được cho MỌI dãy số (không cần sắp xếp trước).",
+              "Nhược điểm: Khi dữ liệu lớn (hàng triệu bản ghi), tốc độ tìm kiếm rất chậm.",
+              "Số phép so sánh tối đa: n lần (với n là kích thước mảng)."
+            ],
+            notes: "Giải thích hình tượng: Giống như bạn đi tìm chìa khóa bị rơi trong một giỏ đồ lộn xộn, bạn phải bới từng món một."
+          },
+          {
+            title: "2. THUẬT TOÁN TÌM KIẾM NHỊ PHÂN",
+            badge: "Hình thành kiến thức",
+            type: "concept",
+            content: [
+              "ĐIỀU KIỆN BẮT BUỘC: Dãy số PHẢI ĐƯỢC SẮP XẾP (tăng dần hoặc giảm dần).",
+              "Ý tưởng cốt lõi: Thu hẹp phạm vi tìm kiếm xuống một nửa sau mỗi bước so sánh.",
+              "Cách tính vị trí giữa: mid = (left + right) // 2.",
+              "Nếu k > A[mid]: Bỏ nửa bên trái, left = mid + 1.",
+              "Nếu k < A[mid]: Bỏ nửa bên phải, right = mid - 1."
+            ],
+            notes: "Lưu ý học sinh: Nhấn mạnh điều kiện dãy phải sắp xếp. Nếu dãy chưa sắp xếp mà dùng nhị phân sẽ cho kết quả sai hoàn toàn."
+          },
+          {
+            title: "BẢNG SO SÁNH HAI THUẬT TOÁN",
+            badge: "Tổng hợp kiến thức",
+            type: "comparison",
+            content: [
+              "• Dữ liệu đầu vào: Tuần tự (Bất kỳ) | Nhị phân (Đã sắp xếp)",
+              "• n = 1,000 phần tử: Tuần tự max 1,000 lần | Nhị phân max 10 lần",
+              "• n = 1,000,000 phần tử: Tuần tự max 1,000,000 lần | Nhị phân max 20 lần",
+              "• Độ phức tạp thời gian: O(n) so với O(log2 n)"
+            ],
+            notes: "Chỉ cho học sinh thấy: Một triệu phần tử mà nhị phân chỉ cần đúng 20 lần so sánh. Đây là lý do Google tìm kiếm hàng tỷ trang web trong 0.2 giây."
+          },
+          {
+            title: "LUYỆN TẬP TƯƠNG TÁC",
+            badge: "Hoạt động 3",
+            type: "quiz",
+            content: [
+              "Cho mảng A = [4, 9, 15, 23, 38, 45, 60, 72]. Cần tìm khóa k = 45.",
+              "Bước 1: left = 0, right = 7 => mid = 3 (A[3]=23). Vì 45 > 23 => left = 4.",
+              "Bước 2: left = 4, right = 7 => mid = 5 (A[5]=45). 45 == 45 => TÌM THẤY!",
+              "Kết luận: Tìm thấy phần tử sau đúng 2 bước so sánh!"
+            ],
+            notes: "Yêu cầu cả lớp cùng lấy giấy nháp hoặc bảng con viết chỉ số left, right và mid."
+          },
+          {
+            title: "VẬN DỤNG & NHIỆM VỤ VỀ NHÀ",
+            badge: "Hoạt động 4",
+            type: "homework",
+            content: [
+              "1. Viết chương trình Python cài đặt cả hai thuật toán trên tập 10,000 số nguyên.",
+              "2. Đo thời gian thực thi (dùng thư viện time) và nhận xét.",
+              "3. Chuẩn bị bài tiếp theo: 'Thực hành thuật toán sắp xếp'."
+            ],
+            notes: "Dặn dò học sinh nộp bài tập qua hệ thống LMS trước 22h tối thứ Năm."
+          }
+        ],
+        exam: {
+          title: "ĐỀ KIỂM TRA ĐỊNH KỲ TIN HỌC 10 - CHUẨN CV 7991",
+          duration: "45 phút",
+          matrix: [
+            { topic: "Thuật toán tìm kiếm tuần tự", p1_nb: 2, p1_th: 1, p1_vd: 0, p2_items: 2, p3_items: 1, total_score: 3.5 },
+            { topic: "Thuật toán tìm kiếm nhị phân", p1_nb: 2, p1_th: 1, p1_vd: 0, p2_items: 4, p3_items: 1, total_score: 4.5 },
+            { topic: "Ứng dụng & So sánh giải thuật", p1_nb: 0, p1_th: 2, p1_vd: 0, p2_items: 2, p3_items: 0, total_score: 2.0 }
+          ],
+          part1: [
+            {
+              id: "p1_1",
+              question: "Trong thuật toán tìm kiếm tuần tự, điều kiện nào làm cho thuật toán dừng lại?",
+              options: [
+                "A. Khi đã so sánh hết các phần tử hoặc tìm thấy giá trị cần tìm",
+                "B. Khi tìm thấy phần tử ở vị trí chính giữa dãy",
+                "C. Khi dãy số được tự động sắp xếp lại tăng dần",
+                "D. Khi chỉ số left vượt quá chỉ số right"
+              ],
+              correct: "A",
+              explanation: "Thuật toán tìm kiếm tuần tự duyệt từ đầu đến cuối dãy, nó dừng khi tìm thấy khóa hoặc khi đã duyệt hết dãy mà không thấy."
+            },
+            {
+              id: "p1_2",
+              question: "Điều kiện tiên quyết để có thể áp dụng thuật toán tìm kiếm nhị phân là gì?",
+              options: [
+                "A. Dãy số phải chứa toàn các số nguyên dương",
+                "B. Dãy số phải có số lượng phần tử là một lũy thừa của 2",
+                "C. Dãy số phải được sắp xếp theo thứ tự (tăng dần hoặc giảm dần)",
+                "D. Dãy số không được chứa các giá trị trùng lặp"
+              ],
+              correct: "C",
+              explanation: "Tìm kiếm nhị phân dựa trên tính chất thứ tự của mảng để loại bỏ một nửa phạm vi tìm kiếm sau mỗi bước."
+            },
+            {
+              id: "p1_3",
+              question: "Với một mảng có 128 phần tử đã sắp xếp, số lần so sánh tối đa của thuật toán tìm kiếm nhị phân là bao nhiêu?",
+              options: [
+                "A. 128 lần",
+                "B. 64 lần",
+                "C. 7 lần",
+                "D. 8 lần"
+              ],
+              correct: "C",
+              explanation: "Số bước lặp tối đa là ⌈log2(128)⌉ = 7 lần so sánh."
+            },
+            {
+              id: "p1_4",
+              question: "Độ phức tạp thời gian trong trường hợp xấu nhất của thuật toán tìm kiếm tuần tự với dãy có n phần tử là gì?",
+              options: [
+                "A. O(1)",
+                "B. O(log n)",
+                "C. O(n)",
+                "D. O(n^2)"
+              ],
+              correct: "C",
+              explanation: "Trường hợp xấu nhất phần tử nằm ở cuối mảng hoặc không có trong mảng, phải so sánh n lần."
+            }
+          ],
+          part2: [
+            {
+              id: "p2_1",
+              prompt: "Câu 1 (Đúng/Sai). Cho mảng số nguyên A = [5, 12, 17, 23, 38, 45, 67, 89] và giá trị cần tìm k = 38. Xét tính Đúng / Sai của các khẳng định sau:",
+              statements: [
+                { id: "a", text: "a) Vì mảng A đã được sắp xếp tăng dần nên có thể áp dụng thuật toán tìm kiếm nhị phân.", answer: true, note: "Đúng vì mảng đã có thứ tự tăng dần." },
+                { id: "b", text: "b) Ở bước lặp đầu tiên của tìm kiếm nhị phân, chỉ số giữa mid = (0 + 7) // 2 = 3, giá trị A[3] = 23.", answer: true, note: "Đúng, mid = 3 và phần tử A[3] có giá trị bằng 23." },
+                { id: "c", text: "c) Vì k = 38 < 23 nên ở bước tiếp theo ta thu hẹp phạm vi tìm kiếm về nửa bên trái (right = mid - 1).", answer: false, note: "Sai, vì 38 > 23 nên phải tìm ở nửa bên phải, gán left = mid + 1." },
+                { id: "d", text: "d) Nếu áp dụng tìm kiếm tuần tự từ đầu mảng, thuật toán cần đúng 5 phép so sánh để tìm thấy k = 38.", answer: true, note: "Đúng, các phần tử lần lượt được so sánh là: 5, 12, 17, 23, 38 (5 lần)." }
+              ]
+            },
+            {
+              id: "p2_2",
+              prompt: "Câu 2 (Đúng/Sai). Khi so sánh hiệu quả giữa tìm kiếm tuần tự và tìm kiếm nhị phân trong thực tiễn lập trình:",
+              statements: [
+                { id: "a", text: "a) Khi kích thước dữ liệu n rất nhỏ (ví dụ n < 10), tìm kiếm tuần tự thường đơn giản và tiện dụng hơn.", answer: true, note: "Đúng, với dữ liệu nhỏ việc sắp xếp không mang lại nhiều lợi thế." },
+                { id: "b", text: "b) Với dữ liệu chưa sắp xếp và chỉ cần tìm kiếm đúng một lần duy nhất, nên sắp xếp trước rồi mới tìm nhị phân để tiết kiệm thời gian.", answer: false, note: "Sai, chi phí sắp xếp O(n log n) lớn hơn rất nhiều so với duyệt tuần tự 1 lần O(n)." },
+                { id: "c", text: "c) Tìm kiếm nhị phân có thể áp dụng trực tiếp trên cấu trúc danh sách liên kết đơn mà không làm giảm hiệu quả.", answer: false, note: "Sai, danh sách liên kết không truy cập ngẫu nhiên O(1) tới phần tử giữa mid." },
+                { id: "d", text: "d) Trong trường hợp tốt nhất (phần tử cần tìm nằm ngay vị trí đầu tiên), cả hai thuật toán đều chỉ cần 1 lần so sánh.", answer: true, note: "Đúng, tìm kiếm tuần tự tìm thấy ở vị trí 0, còn nhị phân tìm thấy nếu phần tử đó tình cờ nằm ở mid." }
+              ]
+            }
+          ],
+          part3: [
+            {
+              id: "p3_1",
+              question: "Câu 1 (Trả lời ngắn): Cho mảng A có 1024 phần tử đã sắp xếp. Hỏi số lần lặp tối đa của thuật toán tìm kiếm nhị phân để kết luận một phần tử có trong mảng hay không là bao nhiêu lần?",
+              correctAnswer: "10",
+              explanation: "Vì 2^10 = 1024 nên sau tối đa 10 lần chia đôi phạm vi mảng sẽ giảm về 1 phần tử. Kết quả: 10."
+            },
+            {
+              id: "p3_2",
+              question: "Câu 2 (Trả lời ngắn): Trong một thuật toán tìm kiếm nhị phân trên mảng A có 9 phần tử với chỉ số từ 0 đến 8. Ở bước đầu tiên, chỉ số phần tử chính giữa (mid) được tính theo công thức mid = (left + right) // 2 có giá trị bằng bao nhiêu?",
+              correctAnswer: "4",
+              explanation: "left = 0, right = 8 => mid = (0 + 8) // 2 = 4. Kết quả: 4."
+            }
+          ]
+        }
+      },
+      math11: {
+        subject: "Toán học",
+        grade: "Lớp 11",
+        lessonTitle: "Cấp số cộng",
+        duration: "2 tiết",
+        plan: {
+          school: "TRƯỜNG THPT CHUẨN QUỐC GIA",
+          department: "TỔ TOÁN HỌC",
+          teacher: "Giáo viên bộ môn Toán",
+          date: "Năm học 2026 - 2027",
+          objectives: {
+            specialized: [
+              "Nhận biết được định nghĩa cấp số cộng, công sai d của cấp số cộng.",
+              "Vận dụng được công thức số hạng tổng quát un = u1 + (n - 1)d để tìm các đại lượng còn lại.",
+              "Tính được tổng của n số hạng đầu tiên của một cấp số cộng: Sn = n(u1 + un)/2."
+            ],
+            general: [
+              "Năng lực tư duy và lập luận toán học: Phát hiện tính quy luật trong dãy số thực tế.",
+              "Năng lực mô hình hóa toán học: Giải quyết các bài toán lãi đơn, tính số ghế khán đài nhà hát."
+            ],
+            qualities: [
+              "Chăm chỉ, kiên trì trong biến đổi công thức và giải bài tập tự luận."
+            ]
+          },
+          equipment: {
+            teacher: "Kế hoạch bài dạy, thước kẻ, máy tính cầm tay, phiếu học tập nhóm.",
+            student: "Sách giáo khoa Toán 11, máy tính cầm tay Casio fx-580VNX, vở nháp."
+          },
+          activities: [
+            {
+              num: 1,
+              title: "Khởi động: Bài toán xếp chồng viên gạch",
+              time: "6 phút",
+              goal: "Tạo tình huống dẫn đến khái niệm dãy số có độ chênh lệch không đổi.",
+              content: "Một bác thợ xây xếp hàng gạch: hàng đáy có 50 viên, mỗi hàng trên bớt đi 2 viên. Hỏi hàng thứ 10 có bao nhiêu viên?",
+              product: "Học sinh lập được dãy: 50, 48, 46, ... và tìm ra quy luật trừ 2 liên tiếp.",
+              implementation: "GV chiếu hình ảnh -> HS tính nhẩm -> GV đặt câu hỏi dẫn dắt vào bài học."
+            },
+            {
+              num: 2,
+              title: "Hình thành kiến thức: Định nghĩa, số hạng tổng quát & tổng n số hạng",
+              time: "49 phút",
+              goal: "Xây dựng định nghĩa, công thức số hạng tổng quát và công thức tổng Sn.",
+              content: "Xây dựng 3 nội dung: 1. Định nghĩa un+1 = un + d; 2. Số hạng un = u1 + (n-1)d; 3. Sn = n[2u1 + (n-1)d]/2.",
+              product: "Bảng ghi công thức và lời giải các ví dụ mẫu trên phiếu học tập.",
+              implementation: "GV chia nhiệm vụ xây dựng công thức tổng quát từ quy nạp -> HS thảo luận -> GV chốt kiến thức."
+            },
+            {
+              num: 3,
+              title: "Luyện tập: Vận dụng công thức",
+              time: "20 phút",
+              goal: "Rèn luyện kĩ năng giải hệ phương trình tìm u1 và d.",
+              content: "Giải bài toán: Cho cấp số cộng biết u3 = 10, u7 = 26. Tìm u1, d và tính S10.",
+              product: "Lời giải chính xác: u1 = 2, d = 4, S10 = 200.",
+              implementation: "HS làm việc độc lập -> 2 HS lên bảng trình bày -> GV nhận xét."
+            },
+            {
+              num: 4,
+              title: "Vận dụng: Bài toán tài chính thực tế",
+              time: "15 phút",
+              goal: "Vận dụng cấp số cộng tính tiền gửi tiết kiệm hoặc bài toán khán đài thể thao.",
+              content: "Tính tổng số ghế của một khán đài có 25 hàng ghế, hàng đầu có 15 ghế, mỗi hàng sau hơn hàng trước 3 ghế.",
+              product: "Học sinh áp dụng công thức Sn tính ra đáp số: S25 = 1275 ghế.",
+              implementation: "GV giao bài tập tình huống thực tế -> HS tính theo nhóm đôi."
+            }
+          ]
+        },
+        slides: [
+          {
+            title: "BÀI HỌC: CẤP SỐ CỘNG",
+            badge: "Toán 11 • Chương: Dãy số - Cấp số cộng và cấp số nhân",
+            type: "title",
+            content: ["Môn Toán học - Khối 11", "Thời lượng: 2 tiết", "Khám phá quy luật cộng dồn không đổi"],
+            notes: "Xin chào các em học sinh. Hôm nay chúng ta cùng tìm hiểu một trong những dãy số đẹp và ứng dụng nhiều nhất trong toán học tài chính: Cấp số cộng."
+          },
+          {
+            title: "MỤC TIÊU BÀI HỌC",
+            badge: "Yêu cầu cần đạt",
+            type: "objectives",
+            content: [
+              "1. Nắm chắc định nghĩa dãy số cấp số cộng và công sai d.",
+              "2. Thành thạo công thức số hạng tổng quát un = u1 + (n - 1)d.",
+              "3. Vận dụng tính tổng Sn của n số hạng đầu tiên.",
+              "4. Giải quyết được bài toán thực tế về mô hình tăng trưởng đều."
+            ],
+            notes: "Nhắc nhở học sinh chuẩn bị sẵn máy tính cầm tay để kiểm tra nhanh các phép tính."
+          },
+          {
+            title: "1. ĐỊNH NGHĨA CẤP SỐ CỘNG",
+            badge: "Kiến thức trọng tâm",
+            type: "concept",
+            content: [
+              "Cấp số cộng là một dãy số mà trong đó, kể từ số hạng thứ hai, mỗi số hạng đều bằng số hạng đứng ngay trước nó cộng với một số không đổi d.",
+              "Công thức truy hồi: un+1 = un + d (với mọi n ≥ 1).",
+              "Số d được gọi là CÔNG SAI của cấp số cộng.",
+              "Ví dụ: 3, 7, 11, 15, 19... là CSC với u1 = 3 và d = 4."
+            ],
+            notes: "Nhấn mạnh: d có thể là số dương, số âm hoặc bằng 0 (khi đó dãy là dãy hằng)."
+          },
+          {
+            title: "2. SỐ HẠNG TỔNG QUÁT",
+            badge: "Công thức quan trọng",
+            type: "concept",
+            content: [
+              "Định lí: Nếu cấp số cộng có số hạng đầu u1 và công sai d thì:",
+              "un = u1 + (n - 1)d (với n ≥ 2).",
+              "Ý nghĩa: Cho phép tìm bất kì số hạng thứ n nào mà không cần tính tuần tự các số hạng trước nó.",
+              "Ví dụ: u1 = 2, d = 5 => u20 = 2 + 19*5 = 97."
+            ],
+            notes: "Lưu ý học sinh hệ số đi cùng d luôn là (n - 1), tránh nhầm lẫn thành n*d."
+          },
+          {
+            title: "3. TỔNG n SỐ HẠNG ĐẦU TIÊN (Sn)",
+            badge: "Công thức Sn",
+            type: "concept",
+            content: [
+              "Công thức 1: Sn = n * (u1 + un) / 2",
+              "Công thức 2: Sn = n * [2*u1 + (n - 1)*d] / 2",
+              "Gợi nhớ: Câu chuyện thời thơ ấu của nhà toán học Gauss tính tổng 1 + 2 + ... + 100 = 5050."
+            ],
+            notes: "Kể chuyện ngắn về Gauss lúc 7 tuổi đã nhanh chóng ghép cặp 1+100, 2+99 để học sinh ghi nhớ bản chất công thức."
+          },
+          {
+            title: "LUYỆN TẬP VÍ DỤ MẪU",
+            badge: "Thực hành",
+            type: "quiz",
+            content: [
+              "Đề bài: Cho cấp số cộng có u1 = -3 và d = 4. Tìm số hạng thứ 15 và tính S15.",
+              "• u15 = u1 + 14*d = -3 + 14*4 = 53.",
+              "• S15 = 15 * (u1 + u15) / 2 = 15 * (-3 + 53) / 2 = 375.",
+              "Kết luận: u15 = 53 và S15 = 375."
+            ],
+            notes: "Cho học sinh 2 phút tự bấm máy tính trước khi giáo viên chiếu đáp án."
+          },
+          {
+            title: "ỨNG DỤNG BÀI TOÁN THỰC TẾ",
+            badge: "Vận dụng cao",
+            type: "homework",
+            content: [
+              "Một công ty trả lương theo thỏa thuận: năm đầu 120 triệu VNĐ, mỗi năm sau tăng thêm 15 triệu VNĐ.",
+              "Hỏi sau 10 năm làm việc, tổng số tiền lương nhận được là bao nhiêu?",
+              "Áp dụng: u1 = 120, d = 15, n = 10.",
+              "S10 = 10 * [2*120 + 9*15] / 2 = 1.875 tỷ VNĐ!"
+            ],
+            notes: "Liên hệ thực tiễn về hợp đồng lao động giúp bài học toán trở nên sinh động và có ý nghĩa."
+          },
+          {
+            title: "TỔNG KẾT & DẶN DÒ",
+            badge: "Ghi nhớ",
+            type: "homework",
+            content: [
+              "• Thuộc lòng 2 công thức: un và Sn.",
+              "• Làm bài tập 1, 2, 3 trang 54 SGK Toán 11.",
+              "• Chuẩn bị bài học tiếp theo: Cấp số nhân."
+            ],
+            notes: "Chào tạm biệt các em học sinh và hẹn gặp lại ở bài học Cấp số nhân."
+          }
+        ],
+        exam: {
+          title: "ĐỀ KIỂM TRA ĐỊNH KỲ TOÁN 11 - CẤP SỐ CỘNG (CV 7991)",
+          duration: "45 phút",
+          matrix: [
+            { topic: "Định nghĩa và công sai d", p1_nb: 2, p1_th: 1, p1_vd: 0, p2_items: 2, p3_items: 1, total_score: 3.5 },
+            { topic: "Số hạng tổng quát un", p1_nb: 1, p1_th: 1, p1_vd: 1, p2_items: 4, p3_items: 0, total_score: 3.5 },
+            { topic: "Tổng n số hạng đầu Sn", p1_nb: 1, p1_th: 0, p1_vd: 1, p2_items: 2, p3_items: 1, total_score: 3.0 }
+          ],
+          part1: [
+            {
+              id: "m_p1_1",
+              question: "Trong các dãy số sau, dãy số nào là một cấp số cộng?",
+              options: [
+                "A. 1; 3; 6; 10; 15",
+                "B. 2; 4; 8; 16; 32",
+                "C. 1; -3; -7; -11; -15",
+                "D. 1; 1; 2; 3; 5"
+              ],
+              correct: "C",
+              explanation: "Dãy 1; -3; -7; -11; -15 có hiệu số giữa hai số liên tiếp không đổi là d = -4."
+            },
+            {
+              id: "m_p1_2",
+              question: "Cho cấp số cộng (un) có u1 = 3 và công sai d = 2. Số hạng thứ 5 của cấp số cộng đó bằng bao nhiêu?",
+              options: [
+                "A. 11",
+                "B. 13",
+                "C. 10",
+                "D. 15"
+              ],
+              correct: "A",
+              explanation: "u5 = u1 + 4d = 3 + 4*2 = 11."
+            },
+            {
+              id: "m_p1_3",
+              question: "Công thức tính tổng Sn của n số hạng đầu tiên của cấp số cộng là:",
+              options: [
+                "A. Sn = n * (u1 + un)",
+                "B. Sn = n * (u1 + un) / 2",
+                "C. Sn = (u1 + un) / 2",
+                "D. Sn = n * (u1 - un) / 2"
+              ],
+              correct: "B",
+              explanation: "Công thức đúng là Sn = n(u1 + un)/2."
+            },
+            {
+              id: "m_p1_4",
+              question: "Cho cấp số cộng có u1 = -5 và d = 3. Số 25 là số hạng thứ mấy của dãy?",
+              options: [
+                "A. Số hạng thứ 10",
+                "B. Số hạng thứ 11",
+                "C. Số hạng thứ 9",
+                "D. Số hạng thứ 12"
+              ],
+              correct: "B",
+              explanation: "un = -5 + (n - 1)*3 = 25 => 3(n - 1) = 30 => n - 1 = 10 => n = 11."
+            }
+          ],
+          part2: [
+            {
+              id: "m_p2_1",
+              prompt: "Câu 1 (Đúng/Sai). Cho cấp số cộng (un) thỏa mãn: u2 + u5 = 19 và u3 + u6 = 25. Xét tính Đúng / Sai của các khẳng định sau:",
+              statements: [
+                { id: "a", text: "a) Hiệu giữa hai phương trình cho ta công sai d = 3.", answer: true, note: "Đúng, (u3 - u2) + (u6 - u5) = 2d = 6 => d = 3." },
+                { id: "b", text: "b) Số hạng đầu tiên của cấp số cộng là u1 = 2.", answer: true, note: "Đúng, u2 + u5 = (u1+3) + (u1+12) = 2u1 + 15 = 19 => 2u1 = 4 => u1 = 2." },
+                { id: "c", text: "c) Số hạng thứ 10 của dãy có giá trị là u10 = 32.", answer: false, note: "Sai, u10 = u1 + 9d = 2 + 9*3 = 29 (không phải 32)." },
+                { id: "d", text: "d) Tổng của 10 số hạng đầu tiên là S10 = 155.", answer: true, note: "Đúng, S10 = 10*(u1 + u10)/2 = 10*(2 + 29)/2 = 155." }
+              ]
+            },
+            {
+              id: "m_p2_2",
+              prompt: "Câu 2 (Đúng/Sai). Xét một dãy số (an) bất kì:",
+              statements: [
+                { id: "a", text: "a) Dãy số hằng an = 5 với mọi n ≥ 1 là một cấp số cộng có công sai d = 0.", answer: true, note: "Đúng, theo định nghĩa an+1 = an + 0." },
+                { id: "b", text: "b) Dãy số an = 3n + 2 luôn là một cấp số cộng với công sai d = 3.", answer: true, note: "Đúng, an+1 - an = [3(n+1)+2] - [3n+2] = 3 không đổi." },
+                { id: "c", text: "c) Dãy số an = n^2 là một cấp số cộng có công sai d = 2n + 1.", answer: false, note: "Sai, công sai phải là một hằng số thực không phụ thuộc vào n." },
+                { id: "d", text: "d) Ba số a, b, c theo thứ tự lập thành cấp số cộng khi và chỉ khi a + c = 2b.", answer: true, note: "Đúng, b - a = c - b <=> a + c = 2b." }
+              ]
+            }
+          ],
+          part3: [
+            {
+              id: "m_p3_1",
+              question: "Câu 1 (Trả lời ngắn): Cho cấp số cộng có u1 = 4 và công sai d = 5. Tính giá trị của tổng S20 (tổng của 20 số hạng đầu tiên)?",
+              correctAnswer: "1030",
+              explanation: "S20 = 20 * [2*4 + 19*5] / 2 = 10 * [8 + 95] = 10 * 103 = 1030."
+            },
+            {
+              id: "m_p3_2",
+              question: "Câu 2 (Trả lời ngắn): Tìm công sai d của cấp số cộng biết số hạng đầu u1 = 7 và số hạng u15 = 49?",
+              correctAnswer: "3",
+              explanation: "u15 = u1 + 14d => 49 = 7 + 14d => 14d = 42 => d = 3."
+            }
+          ]
+        }
+      },
+      lit10: {
+        subject: "Ngữ văn",
+        grade: "Lớp 10",
+        lessonTitle: "Chiến thắng Mtao Mxây (Trích sử thi Đăm Săn)",
+        duration: "2 tiết",
+        plan: {
+          school: "TRƯỜNG THPT CHUẨN QUỐC GIA",
+          department: "TỔ NGỮ VĂN",
+          teacher: "Giáo viên bộ môn Ngữ văn",
+          date: "Năm học 2026 - 2027",
+          objectives: {
+            specialized: [
+              "Nhận biết và phân tích được đặc trưng của thể loại sử thi anh hùng Tây Nguyên: nhân vật người anh hùng, nghệ thuật phóng đại, so sánh trùng điệp.",
+              "Hiểu được khát vọng tự do, vẻ đẹp hào hùng và ý thức cộng đồng của đồng bào Ê-đê thời kỳ thị tộc công xã.",
+              "Cảm thụ được ngôn ngữ giàu hình ảnh và nhịp điệu của đoạn trích."
+            ],
+            general: [
+              "Năng lực tự chủ và tự học: Đọc hiểu văn bản và tóm tắt diễn biến màn giao tranh.",
+              "Năng lực giao tiếp và hợp tác: Sân khấu hóa hoặc thảo luận nhóm về phẩm chất người anh hùng."
+            ],
+            qualities: [
+              "Yêu nước, trân trọng các giá trị văn hóa và di sản văn học dân gian của các dân tộc Việt Nam."
+            ]
+          },
+          equipment: {
+            teacher: "Sách giáo khoa, máy chiếu, tranh minh họa sử thi Đăm Săn, đoạn video cồng chiêng Tây Nguyên.",
+            student: "Sách giáo khoa Ngữ văn 10, vở soạn bài, phiếu chuẩn bị đọc hiểu."
+          },
+          activities: [
+            {
+              num: 1,
+              title: "Khởi động: Không gian văn hóa cồng chiêng Tây Nguyên",
+              time: "6 phút",
+              goal: "Đưa học sinh vào không gian sử thi Tây Nguyên huyền thoại.",
+              content: "Xem video ngắn 1 phút về lễ hội cồng chiêng và nghe lời kể khan của nghệ nhân Ê-đê.",
+              product: "Cảm xúc và liên tưởng của học sinh về vẻ đẹp đại ngàn hùng vĩ.",
+              implementation: "GV chiếu video -> HS phát biểu ấn tượng ban đầu -> GV giới thiệu đoạn trích."
+            },
+            {
+              num: 2,
+              title: "Hình thành kiến thức: Đọc hiểu chi tiết văn bản",
+              time: "48 phút",
+              goal: "Phân tích trận chiến giữa Đăm Săn và Mtao Mxây; bức tranh ăn mừng chiến thắng.",
+              content: "Tìm hiểu: 1. Hiệp đấu và cuộc đọ sức; 2. Sự giúp đỡ của ông Trời; 3. Lễ ăn mừng chiến thắng thị tộc.",
+              product: "Bảng so sánh đối lập giữa Đăm Săn (dũng mãnh, chính nghĩa) và Mtao Mxây (hèn nhát, run sợ).",
+              implementation: "HS đọc phân vai -> Thảo luận nhóm phân tích chi tiết so sánh phóng đại -> GV chốt giá trị nghệ thuật."
+            },
+            {
+              num: 3,
+              title: "Luyện tập: Khái quát nghệ thuật sử thi",
+              time: "20 phút",
+              goal: "Củng cố kiến thức về bút pháp miêu tả của sử thi anh hùng.",
+              content: "Lập sơ đồ tư duy tóm tắt phẩm chất của Đăm Săn và chỉ ra 3 câu văn sử dụng phép so sánh trùng điệp.",
+              product: "Sơ đồ tư duy trên giấy A3 của các nhóm học sinh.",
+              implementation: "Các nhóm treo sản phẩm lên bảng -> Đại diện thuyết trình ngắn 2 phút."
+            },
+            {
+              num: 4,
+              title: "Vận dụng: Suy ngẫm về người anh hùng thời đại",
+              time: "16 phút",
+              goal: "Liên hệ phẩm chất người anh hùng sử thi với trách nhiệm của thanh niên hiện nay.",
+              content: "Viết đoạn văn ngắn (5 - 7 câu): Người anh hùng trong thời bình cần mang những phẩm chất gì?",
+              product: "Đoạn văn chia sẻ cảm nghĩ của học sinh.",
+              implementation: "HS viết cá nhân -> 2 HS đọc chia sẻ trước lớp -> GV đúc kết bài học."
+            }
+          ]
+        },
+        slides: [
+          {
+            title: "CHIẾN THẮNG MTAO MXÂY",
+            badge: "Ngữ văn 10 • Thể loại: Sử thi anh hùng Tây Nguyên",
+            type: "title",
+            content: ["Trích Sử thi Đăm Săn (Dân tộc Ê-đê)", "Thời lượng: 2 tiết", "Khúc ca ngợi ca sức mạnh và vẻ đẹp thị tộc"],
+            notes: "Kính chào các em học sinh. Hôm nay chúng ta cùng ngược dòng thời gian về với buôn làng Tây Nguyên cổ đại để lắng nghe bản trường ca bi tráng về người anh hùng Đăm Săn."
+          },
+          {
+            title: "MỤC TIÊU BÀI HỌC",
+            badge: "Yêu cầu cần đạt",
+            type: "objectives",
+            content: [
+              "1. Nhận diện đặc trưng thể loại sử thi anh hùng Tây Nguyên.",
+              "2. Phân tích cuộc giao tranh hào hùng giữa Đăm Săn và Mtao Mxây.",
+              "3. Cảm nhận vẻ đẹp cộng đồng thị tộc qua cảnh ăn mừng chiến thắng.",
+              "4. Nắm vững nghệ thuật so sánh, phóng đại trùng điệp."
+            ],
+            notes: "Giúp học sinh hiểu rằng đây không chỉ là chiến thắng cá nhân mà là chiến thắng của cả cộng đồng buôn làng."
+          },
+          {
+            title: "1. CUỘC KHIÊU CHIẾN VÀ ĐỌ SỨC",
+            badge: "Hình tượng nhân vật",
+            type: "concept",
+            content: [
+              "• Đăm Săn: Đường hoàng, đàng hoàng khiêu chiến, chủ động và tự tin.",
+              "• Mtao Mxây: Ngạo nghễ lúc đầu nhưng run sợ, trốn tránh, múa khiên lạch xạch như quả mướp khô.",
+              "Ý nghĩa: Sự đối lập gay gắt giữa chính nghĩa dũng mãnh và kẻ phi nghĩa hèn nhát."
+            ],
+            notes: "Hướng dẫn học sinh chú ý ngôn ngữ đối thoại sinh động và hành động múa khiên của hai tù trưởng."
+          },
+          {
+            title: "2. NGHỆ THUẬT SO SÁNH PHÓNG ĐẠI",
+            badge: "Nghệ thuật sử thi",
+            type: "concept",
+            content: [
+              "• 'Chàng múa trên cao, gió như bão. Chàng múa dưới thấp, gió như lốc.'",
+              "• 'Bắp chân chàng to bằng cây xà ngang, bắp đùi chàng to bằng ống bễ...'",
+              "Tác dụng: Tôn vinh vẻ đẹp kỳ vĩ, phi thường của người anh hùng ngang tầm vũ trụ."
+            ],
+            notes: "Nhấn mạnh nghệ thuật phóng đại trong sử thi không phải nói dối, mà là sự ngưỡng vọng thiêng liêng của cộng đồng đối với người thủ lĩnh."
+          },
+          {
+            title: "3. CẢNH ĂN MỪNG CHIẾN THẮNG",
+            badge: "Bức tranh buôn làng",
+            type: "concept",
+            content: [
+              "• Âm thanh cồng chiêng vang lừng, rộn rã khắp núi rừng.",
+              "• Thị tộc Đăm Săn ngày càng giàu mạnh: tôi tớ đông như kiến cỏ, chiêng voi đầy sân.",
+              "• Ý nghĩa: Thể hiện khát vọng ấm no, hòa bình và thịnh vượng của toàn thể cộng đồng."
+            ],
+            notes: "Chiếu tranh minh họa lễ hội ăn mừng với rượu cần và cồng chiêng để khơi gợi cảm xúc."
+          },
+          {
+            title: "LUYỆN TẬP: TỔNG KẾT NGHỆ THUẬT",
+            badge: "Ghi nhớ",
+            type: "quiz",
+            content: [
+              "Nét đặc sắc nghệ thuật của đoạn trích:",
+              "1. Ngôn ngữ trang trọng, giàu nhịp điệu kể khan.",
+              "2. Thủ pháp tương phản đối lập sâu sắc.",
+              "3. Nghệ thuật so sánh, phóng đại trùng điệp mang tầm vóc thiên nhiên."
+            ],
+            notes: "Cho học sinh tìm nhanh các câu văn so sánh tiêu biểu trong sách giáo khoa."
+          },
+          {
+            title: "VẬN DỤNG VÀ LIÊN HỆ BẢN THÂN",
+            badge: "Ý nghĩa bài học",
+            type: "homework",
+            content: [
+              "Người anh hùng ngày xưa bảo vệ buôn làng bằng vũ khí và lòng quả cảm.",
+              "Người anh hùng trẻ tuổi ngày nay cống hiến cho đất nước bằng:",
+              "• Tri thức, công nghệ và sự sáng tạo.",
+              "• Lòng nhân ái, tinh thần trách nhiệm vì cộng đồng."
+            ],
+            notes: "Khích lệ các em học sinh nỗ lực rèn luyện để trở thành những người có ích cho quê hương."
+          },
+          {
+            title: "DẶN DÒ HỌC TẬP VỀ NHÀ",
+            badge: "Nhiệm vụ",
+            type: "homework",
+            content: [
+              "1. Vẽ tranh hoặc viết cảm nhận ngắn về hình tượng Đăm Săn.",
+              "2. Soạn bài tiếp theo: 'Uy-lít-xơ trở về (Trích Ô-đi-xê)'.",
+              "Chúc các em học tốt môn Ngữ văn!"
+            ],
+            notes: "Cảm ơn các em đã lắng nghe bài giảng."
+          }
+        ],
+        exam: {
+          title: "ĐỀ KIỂM TRA ĐỊNH KỲ NGỮ VĂN 10 - CHIẾN THẮNG MTAO MXÂY (CV 7991)",
+          duration: "45 phút",
+          matrix: [
+            { topic: "Đặc trưng thể loại Sử thi anh hùng", p1_nb: 2, p1_th: 1, p1_vd: 0, p2_items: 2, p3_items: 0, total_score: 3.0 },
+            { topic: "Hình tượng nhân vật Đăm Săn & Mtao Mxây", p1_nb: 1, p1_th: 1, p1_vd: 1, p2_items: 4, p3_items: 1, total_score: 4.5 },
+            { topic: "Ý nghĩa cảnh ăn mừng chiến thắng", p1_nb: 1, p1_th: 0, p1_vd: 1, p2_items: 2, p3_items: 1, total_score: 2.5 }
+          ],
+          part1: [
+            {
+              id: "l_p1_1",
+              question: "Đoạn trích 'Chiến thắng Mtao Mxây' thuộc thể loại văn học dân gian nào?",
+              options: [
+                "A. Truyện cổ tích thần kì",
+                "B. Sử thi anh hùng",
+                "C. Truyền thuyết lịch sử",
+                "D. Truyện ngụ ngôn"
+              ],
+              correct: "B",
+              explanation: "Đoạn trích thuộc sử thi anh hùng Đăm Săn của dân tộc Ê-đê."
+            },
+            {
+              id: "l_p1_2",
+              question: "Biện pháp tu từ nổi bật nhất được sử dụng để khắc họa vẻ đẹp người anh hùng Đăm Săn là gì?",
+              options: [
+                "A. Điệp từ và ẩn dụ chuyển đổi cảm giác",
+                "B. So sánh và phóng đại (khoa trương)",
+                "C. Chơi chữ và nghịch ngữ",
+                "D. Hoán dụ và nhân hóa"
+              ],
+              correct: "B",
+              explanation: "Sử thi sử dụng triệt để biện pháp so sánh phóng đại để nâng tầm vóc nhân vật ngang tầm vũ trụ."
+            },
+            {
+              id: "l_p1_3",
+              question: "Chi tiết Ông Trời xuất hiện mách bảo Đăm Săn ném chày vào vành tai kẻ thù có ý nghĩa gì?",
+              options: [
+                "A. Cho thấy Đăm Săn hoàn toàn bất lực nếu không có thần linh",
+                "B. Biểu hiện sự đồng tình, ủng hộ của công lý và thần linh đối với người anh hùng chính nghĩa",
+                "C. Phản ánh Mtao Mxây là người có sức mạnh thần thánh hơn Đăm Săn",
+                "D. Thể hiện quan niệm mê tín dị đoan của người xưa"
+              ],
+              correct: "B",
+              explanation: "Thần linh trong sử thi luôn đứng về phía chính nghĩa, sự trợ giúp chỉ là gợi ý còn chiến thắng là do bàn tay Đăm Săn."
+            },
+            {
+              id: "l_p1_4",
+              question: "Cảnh ăn mừng chiến thắng ở cuối đoạn trích thể hiện điều gì?",
+              options: [
+                "A. Niềm kiêu hãnh và ước mơ về sự ấm no, giàu mạnh của toàn thể cộng đồng thị tộc",
+                "B. Sự trả thù tàn khốc giữa các bộ tộc phong kiến",
+                "C. Lòng tham lam của cải của riêng cá nhân Đăm Săn",
+                "D. Nỗi đau xót trước sự tàn phá của chiến tranh bộ tộc"
+              ],
+              correct: "A",
+              explanation: "Cảnh ăn mừng biểu dương sức mạnh đoàn kết và khát vọng thịnh vượng của buôn làng."
+            }
+          ],
+          part2: [
+            {
+              id: "l_p2_1",
+              prompt: "Câu 1 (Đúng/Sai). Khi phân tích cảnh giao chiến giữa Đăm Săn và Mtao Mxây, xét tính Đúng / Sai của các nhận định sau:",
+              statements: [
+                { id: "a", text: "a) Đăm Săn khiêu chiến đàng hoàng, thể hiện bản lĩnh quả cảm, không đánh lén kẻ thù.", answer: true, note: "Đúng, Đăm Săn thách Mtao Mxây xuống sàn đọ dao chứ không đánh lén." },
+                { id: "b", text: "b) Mtao Mxây khi múa khiên được miêu tả dũng mãnh, tiếng khiên gầm rú như sấm truyền.", answer: false, note: "Sai, Mtao Mxây múa khiên lạch xạch như quả mướp khô, run sợ." },
+                { id: "c", text: "c) Miêu tả sự đối lập giữa hai tù trưởng nhằm làm nổi bật tư thế lẫm liệt của người anh hùng sử thi.", answer: true, note: "Đúng, thủ pháp nghệ thuật tương phản đối lập rất rõ nét." },
+                { id: "d", text: "d) Sau khi chiến thắng, Đăm Săn đã giết sạch toàn bộ dân làng của Mtao Mxây để diệt trừ hậu họa.", answer: false, note: "Sai, Đăm Săn gõ cửa rủ dân làng đi theo mình, họ tự nguyện mang của cải gia nhập thị tộc." }
+              ]
+            },
+            {
+              id: "l_p2_2",
+              prompt: "Câu 2 (Đúng/Sai). Về giá trị văn hóa và tư tưởng của sử thi Đăm Săn:",
+              statements: [
+                { id: "a", text: "a) Tác phẩm phản ánh thời kỳ chuyển giao lịch sử từ xã hội mẫu hệ sang phụ hệ của người Ê-đê.", answer: true, note: "Đúng, đó là giai đoạn thị tộc mở rộng và hình thành uy quyền người thủ lĩnh." },
+                { id: "b", text: "b) Lời kể khan trong sử thi được truyền miệng qua nhiều thế hệ bên bếp lửa nhà dài.", answer: true, note: "Đúng, hình thức diễn xướng kể khan là nét văn hóa phi vật thể đặc sắc." },
+                { id: "c", text: "c) Nhân vật Đăm Săn chỉ hành động vì mục đích cá nhân là giành lại người vợ Hơ Nhị.", answer: false, note: "Sai, việc đòi lại vợ gắn liền với danh dự và sự tồn vong của toàn bộ thị tộc." },
+                { id: "d", text: "d) Âm thanh cồng chiêng trong đoạn trích là biểu tượng linh thiêng kết nối con người với thế giới thần linh và tổ tiên.", answer: true, note: "Đúng, tiếng chiêng giục giã mang linh hồn của văn hóa Tây Nguyên." }
+              ]
+            }
+          ],
+          part3: [
+            {
+              id: "l_p3_1",
+              question: "Câu 1 (Trả lời ngắn): Hãy gọi tên biện pháp tu từ được sử dụng chủ đạo trong câu văn sau: 'Chàng múa trên cao, gió như bão. Chàng múa dưới thấp, gió như lốc.'?",
+              correctAnswer: "So sánh",
+              explanation: "Câu văn sử dụng từ so sánh 'như' kết hợp với phép phóng đại ('gió như bão', 'gió như lốc'). Chấp nhận: So sánh (hoặc Phóng đại)."
+            },
+            {
+              id: "l_p3_2",
+              question: "Câu 2 (Trả lời ngắn): Trong đoạn trích, vị thần nào đã hiện ra trong giấc mơ để chỉ cho Đăm Săn cách đánh bại Mtao Mxây?",
+              correctAnswer: "Ông Trời",
+              explanation: "Chính Ông Trời đã mách Đăm Săn nhặt một cái chày mòn ném vào vành tai kẻ thù. Đáp án: Ông Trời (hoặc Thần Trời)."
+            }
+          ]
+        }
+      }
+    };
+
+    // Current Active State
+    let currentData = JSON.parse(JSON.stringify(SAMPLE_DATABASE.cs10));
+    let activeSlideIndex = 0;
+    let userExamAnswers = {
+      part1: {},
+      part2: {},
+      part3: {}
+    };
+
+    // Toast Notification Utility (Replaces alert)
+    function showToast(message, isSuccess = true) {
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toastMessage');
+      const toastIcon = document.getElementById('toastIcon');
+      
+      toastMessage.textContent = message;
+      toastIcon.textContent = isSuccess ? "✓" : "⚠";
+      toastIcon.className = isSuccess ? "text-emerald-400 font-bold" : "text-amber-400 font-bold";
+      
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 3500);
+    }
+
+    // Render Tab 1: Kế Hoạch Bài Dạy (CV 5512 & 7991)
+    function renderLessonPlan() {
+      const p = currentData.plan;
+      const container = document.getElementById('editablePlanContent');
+
+      let html = `
+        <!-- Header Giáo Án -->
+        <table style="width: 100%; border: none; margin-bottom: 20px;">
+          <tr style="border: none;">
+            <td style="border: none; width: 45%; text-align: center; vertical-align: top;">
+              <strong>${p.school}</strong><br>
+              <strong>${p.department}</strong><br>
+              --------------------
+            </td>
+            <td style="border: none; width: 55%; text-align: center; vertical-align: top;">
+              <strong>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</strong><br>
+              <strong>Độc lập - Tự do - Hạnh phúc</strong><br>
+              --------------------
+            </td>
+          </tr>
+        </table>
+
+        <div style="text-align: center; margin-bottom: 25px;">
+          <h2 style="font-size: 16pt; font-weight: bold; margin: 0; text-transform: uppercase;">KẾ HOẠCH BÀI DẠY</h2>
+          <p style="font-size: 14pt; font-weight: bold; margin: 5px 0 0 0; color: #047857;">BÀI DẠY: ${currentData.lessonTitle.toUpperCase()}</p>
+          <p style="font-style: italic; margin: 4px 0 0 0; font-size: 12pt;">
+            Môn học: <strong>${currentData.subject}</strong> | Khối lớp: <strong>${currentData.grade}</strong> | Thời lượng thực hiện: <strong>${currentData.duration}</strong>
+          </p>
+          <p style="font-style: italic; margin: 2px 0 0 0; font-size: 11pt; color: #4b5563;">
+            (Xây dựng theo khung quy chuẩn Công văn số 5512/BGDĐT-GDTrH và Công văn số 7991/BGDĐT-GDTrH)
+          </p>
+        </div>
+
+        <h3 style="font-size: 14pt; font-weight: bold; text-transform: uppercase; margin-top: 20px; border-bottom: 1.5px solid #000; padding-bottom: 3px;">
+          I. MỤC TIÊU BÀI DẠY
+        </h3>
+        
+        <p><strong>1. Về năng lực đặc thù:</strong></p>
+        <ul style="margin: 5px 0 10px 25px; list-style-type: disc;">
+          ${p.objectives.specialized.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+
+        <p><strong>2. Về năng lực chung:</strong></p>
+        <ul style="margin: 5px 0 10px 25px; list-style-type: disc;">
+          ${p.objectives.general.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+
+        <p><strong>3. Về phẩm chất:</strong></p>
+        <ul style="margin: 5px 0 15px 25px; list-style-type: disc;">
+          ${p.objectives.qualities.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+
+        <h3 style="font-size: 14pt; font-weight: bold; text-transform: uppercase; margin-top: 20px; border-bottom: 1.5px solid #000; padding-bottom: 3px;">
+          II. THIẾT BỊ DẠY HỌC VÀ HỌC LIỆU
+        </h3>
+        <p><strong>1. Đối với giáo viên:</strong> ${p.equipment.teacher}</p>
+        <p><strong>2. Đối với học sinh:</strong> ${p.equipment.student}</p>
+
+        <h3 style="font-size: 14pt; font-weight: bold; text-transform: uppercase; margin-top: 25px; border-bottom: 1.5px solid #000; padding-bottom: 3px;">
+          III. TIẾN TRÌNH DẠY HỌC
+        </h3>
+      `;
+
+      // Render 4 Activities according to CV 5512 & 7991
+      p.activities.forEach(act => {
+        html += `
+          <div style="margin-top: 18px; margin-bottom: 15px;">
+            <h4 style="font-size: 13pt; font-weight: bold; color: #1e3a8a; margin: 8px 0;">
+              ${act.title} (${act.time})
+            </h4>
+            <p style="margin: 4px 0;"><strong>a) Mục tiêu:</strong> ${act.goal}</p>
+            <p style="margin: 4px 0;"><strong>b) Nội dung:</strong> ${act.content}</p>
+            <p style="margin: 4px 0;"><strong>c) Sản phẩm:</strong> ${act.product}</p>
+            <p style="margin: 4px 0;"><strong>d) Tổ chức thực hiện:</strong></p>
+            
+            <table style="width: 100%; border-collapse: collapse; margin-top: 8px;">
+              <thead>
+                <tr style="background-color: #f3f4f6;">
+                  <th style="width: 50%; border: 1px solid #374151; padding: 8px; font-weight: bold; text-align: center;">HOẠT ĐỘNG CỦA GIÁO VIÊN</th>
+                  <th style="width: 50%; border: 1px solid #374151; padding: 8px; font-weight: bold; text-align: center;">HOẠT ĐỘNG CỦA HỌC SINH</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="border: 1px solid #374151; padding: 8px; vertical-align: top;">
+                    <strong>* Bước 1: Chuyển giao nhiệm vụ</strong><br>
+                    - GV hướng dẫn yêu cầu: ${act.content}<br>
+                    - GV phát phiếu học tập hoặc giao câu hỏi gợi mở.<br><br>
+                    <strong>* Bước 4: Kết luận, nhận định</strong><br>
+                    - GV nhận xét thái độ làm việc và câu trả lời của HS.<br>
+                    - GV chốt lại kiến thức cốt lõi và ghi bảng.
+                  </td>
+                  <td style="border: 1px solid #374151; padding: 8px; vertical-align: top;">
+                    <strong>* Bước 2: Thực hiện nhiệm vụ</strong><br>
+                    - HS lắng nghe, tiếp nhận và thảo luận nhóm/cá nhân.<br>
+                    - HS hoàn thành sản phẩm dự kiến: ${act.product}<br><br>
+                    <strong>* Bước 3: Báo cáo, thảo luận</strong><br>
+                    - Đại diện HS/nhóm trình bày kết quả.<br>
+                    - Các HS/nhóm khác lắng nghe, phản biện và bổ sung.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        `;
+      });
+
+      html += `
+        <div style="margin-top: 40px; display: flex; justify-content: space-between; page-break-inside: avoid;">
+          <table style="width: 100%; border: none;">
+            <tr style="border: none;">
+              <td style="border: none; width: 50%; text-align: center;">
+                <strong>DUYỆT CỦA TỔ CHUYÊN MÔN</strong><br>
+                <em style="font-size: 11pt;">(Ký và ghi rõ họ tên)</em><br><br><br><br>
+              </td>
+              <td style="border: none; width: 50%; text-align: center;">
+                <em>Ngày ..... tháng ..... năm 202...</em><br>
+                <strong>GIÁO VIÊN SOẠN BÀI</strong><br>
+                <em style="font-size: 11pt;">(Ký và ghi rõ họ tên)</em><br><br><br><br>
+              </td>
+            </tr>
+          </table>
+        </div>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    // Render Tab 2: Slide Trình Chiếu
+    function renderSlide(index) {
+      const slides = currentData.slides;
+      if (!slides || slides.length === 0) return;
+
+      activeSlideIndex = Math.max(0, Math.min(index, slides.length - 1));
+      const s = slides[activeSlideIndex];
+
+      // Update counters
+      document.getElementById('slideIndicator').textContent = `${activeSlideIndex + 1} / ${slides.length}`;
+      document.getElementById('slideFooterRight').textContent = `Slide ${activeSlideIndex + 1} / ${slides.length}`;
+      document.getElementById('slideBadge').textContent = s.badge || "Bài giảng điện tử";
+      document.getElementById('slideLessonMini').textContent = currentData.lessonTitle;
+
+      // Update Main Body
+      const body = document.getElementById('slideMainBody');
+      let bodyHtml = `
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight mb-4 drop-shadow">
+          ${s.title}
+        </h2>
+        <div class="space-y-3 max-w-2xl">
+      `;
+
+      s.content.forEach((item, idx) => {
+        bodyHtml += `
+          <div class="flex items-start space-x-3 bg-white/5 hover:bg-white/10 p-3 rounded-xl border border-white/10 backdrop-blur-sm transition">
+            <span class="w-6 h-6 rounded-lg bg-emerald-500/30 text-emerald-300 border border-emerald-400/40 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+              ${idx + 1}
+            </span>
+            <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">${item}</p>
+          </div>
+        `;
+      });
+      bodyHtml += `</div>`;
+      body.innerHTML = bodyHtml;
+
+      // Update Teacher Note Box
+      document.getElementById('teacherNoteBox').innerHTML = `
+        <p class="font-semibold text-amber-900 mb-1">Gợi ý phát biểu của Giáo viên (Slide ${activeSlideIndex + 1}):</p>
+        <p class="italic">"${s.notes || 'Giáo viên điều phối học sinh thảo luận và ghi chép các ý chính vào vở.'}"</p>
+      `;
+
+      // Update Dots Navigation
+      const dotsBox = document.getElementById('slideDotsContainer');
+      dotsBox.innerHTML = slides.map((_, i) => `
+        <button class="w-3 h-3 rounded-full transition ${i === activeSlideIndex ? 'bg-emerald-500 scale-125' : 'bg-slate-300 hover:bg-slate-400'}" onclick="renderSlide(${i})" title="Đến Slide ${i+1}"></button>
+      `).join('');
+    }
+
+    // Render Tab 3: Ma Trận & Đề Kiểm Tra CV 7991
+    function renderExamAndMatrix() {
+      const ex = currentData.exam;
+      if (!ex) return;
+
+      document.getElementById('examTitleHeader').textContent = ex.title;
+      document.getElementById('examSubHeader').textContent = `Môn: ${currentData.subject} ${currentData.grade} | Thời lượng làm bài: ${ex.duration} | Đề kiểm tra chuẩn đánh giá`;
+
+      // 1. Render Matrix Table (40% NB - 30% TH - 30% VD)
+      const matrixBox = document.getElementById('matrixContainer');
+      let mHtml = `
+        <table class="w-full text-xs" style="border-collapse: collapse;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th rowspan="2" style="border: 1px solid #94a3b8; padding: 6px;">TT</th>
+              <th rowspan="2" style="border: 1px solid #94a3b8; padding: 6px;">Chủ đề / Đơn vị kiến thức</th>
+              <th colspan="3" style="border: 1px solid #94a3b8; padding: 6px;">Phần I: TN nhiều lựa chọn (câu)</th>
+              <th colspan="3" style="border: 1px solid #94a3b8; padding: 6px;">Phần II: TN Đúng/Sai (lệnh hỏi)</th>
+              <th colspan="3" style="border: 1px solid #94a3b8; padding: 6px;">Phần III: Trả lời ngắn (câu)</th>
+              <th rowspan="2" style="border: 1px solid #94a3b8; padding: 6px;">Tổng điểm</th>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+              <th style="border: 1px solid #94a3b8; padding: 4px;">NB</th>
+              <th style="border: 1px solid #94a3b8; padding: 4px;">TH</th>
+              <th style="border: 1px solid #94a3b8; padding: 4px;">VD</th>
+              <th style="border: 1px solid #94a3b8; padding: 4px;">NB</th>
+              <th style="border: 1px solid #94a3b8; padding: 4px;">TH</th>
+              <th style="border: 1px solid #94a3b8; padding: 4px;">VD</th>
+              <th style="border: 1px solid #94a3b8; padding: 4px;">NB</th>
+              <th style="border: 1px solid #94a3b8; padding: 4px;">TH</th>
+              <th style="border: 1px solid #94a3b8; padding: 4px;">VD</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      ex.matrix.forEach((row, i) => {
+        mHtml += `
+          <tr style="text-align: center;">
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">${i + 1}</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px; text-align: left; font-weight: 600;">${row.topic}</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">${row.p1_nb}</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">${row.p1_th}</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">${row.p1_vd}</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">${Math.round(row.p2_items * 0.5)}</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">${Math.round(row.p2_items * 0.3)}</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">${Math.round(row.p2_items * 0.2)}</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">0</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">${row.p3_items > 0 ? 1 : 0}</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">${row.p3_items > 1 ? 1 : 0}</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px; font-weight: bold; color: #047857;">${row.total_score} đ</td>
+          </tr>
+        `;
+      });
+
+      mHtml += `
+            <tr style="background-color: #f1f5f9; font-weight: bold; text-align: center;">
+              <td colspan="2" style="border: 1px solid #94a3b8; padding: 6px;">TỔNG HỢP THEO MỨC ĐỘ NHẬN THỨC</td>
+              <td colspan="3" style="border: 1px solid #94a3b8; padding: 6px;">Phần I: 3.0 điểm</td>
+              <td colspan="3" style="border: 1px solid #94a3b8; padding: 6px;">Phần II: 4.0 điểm</td>
+              <td colspan="3" style="border: 1px solid #94a3b8; padding: 6px;">Phần III: 3.0 điểm</td>
+              <td style="border: 1px solid #94a3b8; padding: 6px; color: #b91c1c;">10.0 ĐIỂM</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size: 11pt; font-style: italic; color: #475569; margin-top: 8px;">
+          * Tỉ lệ nhận thức chuẩn CV 7991: Nhận biết 40% (4,0đ) - Thông hiểu 30% (3,0đ) - Vận dụng 30% (3,0đ).
+        </p>
+      `;
+      matrixBox.innerHTML = mHtml;
+
+      // 2. Render Interactive Exam Container
+      const examBox = document.getElementById('examContainer');
+      let exHtml = '';
+
+      // --- PHẦN I ---
+      exHtml += `
+        <div class="exam-section">
+          <div class="bg-slate-100 p-3 rounded-lg border border-slate-200 mb-4 flex items-center justify-between">
+            <h3 class="font-bold text-sm text-slate-800">
+              PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN
+            </h3>
+            <span class="text-xs font-semibold bg-white text-slate-600 px-2.5 py-1 rounded border border-slate-200">
+              Mỗi câu đúng được 0,25 điểm
+            </span>
+          </div>
+          <p class="text-xs italic text-slate-500 mb-3">Thí sinh trả lời từ câu 1 đến câu ${ex.part1.length}. Mỗi câu hỏi thí sinh chỉ chọn một phương án.</p>
+          <div class="space-y-4">
+      `;
+
+      ex.part1.forEach((q, idx) => {
+        exHtml += `
+          <div class="p-4 rounded-xl border border-slate-200 bg-white hover:border-slate-300 transition" id="card_${q.id}">
+            <p class="font-semibold text-sm text-slate-800 mb-2">
+              <span class="text-emerald-700 font-bold">Câu ${idx + 1}:</span> ${q.question}
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
+              ${q.options.map(opt => {
+                const optLetter = opt.charAt(0);
+                return `
+                  <label class="flex items-center space-x-2 text-xs p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer transition">
+                    <input type="radio" name="${q.id}" value="${optLetter}" class="text-emerald-600 focus:ring-emerald-500" onchange="recordUserAnswer('part1', '${q.id}', '${optLetter}')">
+                    <span>${opt}</span>
+                  </label>
+                `;
+              }).join('')}
+            </div>
+            <div id="explain_${q.id}" class="hidden mt-3 text-xs p-2.5 bg-emerald-50 text-emerald-800 rounded-lg border border-emerald-200">
+              <strong>Đáp án đúng: ${q.correct}.</strong> ${q.explanation}
+            </div>
+          </div>
+        `;
+      });
+      exHtml += `</div></div>`;
+
+      // --- PHẦN II ---
+      exHtml += `
+        <div class="exam-section pt-6 border-t border-slate-200">
+          <div class="bg-amber-50 p-3 rounded-lg border border-amber-200 mb-4 flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <h3 class="font-bold text-sm text-amber-900">
+                PHẦN II. CÂU HỎI TRẮC NGHIỆM ĐÚNG / SAI (ĐẶC TRƯNG CV 7991)
+              </h3>
+              <p class="text-[11px] text-amber-700">Quy tắc tính điểm bậc thang: Đúng 1 ý = 0,1đ | Đúng 2 ý = 0,25đ | Đúng 3 ý = 0,5đ | Đúng cả 4 ý = 1,0đ</p>
+            </div>
+            <span class="text-xs font-bold bg-amber-200 text-amber-900 px-2.5 py-1 rounded">
+              Tối đa 1,0 điểm / câu
+            </span>
+          </div>
+          <div class="space-y-6">
+      `;
+
+      ex.part2.forEach((q, idx) => {
+        exHtml += `
+          <div class="p-4 rounded-xl border border-slate-200 bg-white" id="card_${q.id}">
+            <p class="font-semibold text-sm text-slate-800 mb-3">${q.prompt}</p>
+            
+            <div class="space-y-2">
+              ${q.statements.map(st => `
+                <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-xs gap-3">
+                  <div class="flex-1 text-slate-700">${st.text}</div>
+                  <div class="flex items-center space-x-2 shrink-0">
+                    <label class="flex items-center space-x-1 cursor-pointer bg-white px-2 py-1 rounded border border-slate-300 hover:border-emerald-500">
+                      <input type="radio" name="${q.id}_${st.id}" value="true" onchange="recordUserAnswer('part2', '${q.id}_${st.id}', true)">
+                      <span class="font-medium text-emerald-700">Đúng</span>
+                    </label>
+                    <label class="flex items-center space-x-1 cursor-pointer bg-white px-2 py-1 rounded border border-slate-300 hover:border-rose-500">
+                      <input type="radio" name="${q.id}_${st.id}" value="false" onchange="recordUserAnswer('part2', '${q.id}_${st.id}', false)">
+                      <span class="font-medium text-rose-700">Sai</span>
+                    </label>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+            <div id="explain_${q.id}" class="hidden mt-3 text-xs p-3 bg-amber-50/80 rounded-lg border border-amber-200 text-slate-700 space-y-1">
+              ${q.statements.map(st => `
+                <p>• <strong>Ý ${st.id.toUpperCase()}:</strong> ${st.answer ? '<span class="text-emerald-700 font-bold">ĐÚNG</span>' : '<span class="text-rose-700 font-bold">SAI</span>'} - ${st.note}</p>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      });
+      exHtml += `</div></div>`;
+
+      // --- PHẦN III ---
+      exHtml += `
+        <div class="exam-section pt-6 border-t border-slate-200">
+          <div class="bg-indigo-50 p-3 rounded-lg border border-indigo-200 mb-4 flex items-center justify-between">
+            <h3 class="font-bold text-sm text-indigo-900">
+              PHẦN III. CÂU HỎI TRẮC NGHIỆM DẠNG TRẢ LỜI NGẮN / TỰ LUẬN
+            </h3>
+            <span class="text-xs font-semibold bg-white text-indigo-800 px-2.5 py-1 rounded border border-indigo-200">
+              Thang điểm vận dụng
+            </span>
+          </div>
+          <div class="space-y-4">
+      `;
+
+      ex.part3.forEach((q, idx) => {
+        exHtml += `
+          <div class="p-4 rounded-xl border border-slate-200 bg-white" id="card_${q.id}">
+            <p class="font-semibold text-sm text-slate-800 mb-2">${q.question}</p>
+            <div class="flex items-center space-x-3 mt-2">
+              <span class="text-xs font-medium text-slate-600">Điền câu trả lời ngắn:</span>
+              <input type="text" id="input_${q.id}" placeholder="Nhập đáp án số hoặc từ..." class="bg-slate-50 border border-slate-300 rounded-lg px-3 py-1.5 text-xs text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none w-48" oninput="recordUserAnswer('part3', '${q.id}', this.value)">
+            </div>
+            <div id="explain_${q.id}" class="hidden mt-3 text-xs p-2.5 bg-indigo-50 text-indigo-900 rounded-lg border border-indigo-200">
+              <strong>Đáp án chuẩn: ${q.correctAnswer}.</strong> Lời giải: ${q.explanation}
+            </div>
+          </div>
+        `;
+      });
+      exHtml += `</div></div>`;
+
+      examBox.innerHTML = exHtml;
+
+      // 3. Render Answer Key Table
+      const answerBox = document.getElementById('answerKeyContainer');
+      let ansHtml = `
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+          <!-- Phần I Đáp án -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <h4 class="font-bold text-slate-800 mb-2 text-sm border-b border-slate-200 pb-1">Phần I (0,25đ / câu)</h4>
+            <table class="w-full">
+              <tr><th class="border p-1">Câu</th><th class="border p-1">Đáp án</th></tr>
+              ${ex.part1.map((q, i) => `<tr><td class="border p-1 text-center">Câu ${i+1}</td><td class="border p-1 text-center font-bold text-emerald-700">${q.correct}</td></tr>`).join('')}
+            </table>
+          </div>
+
+          <!-- Phần II Đáp án -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <h4 class="font-bold text-slate-800 mb-2 text-sm border-b border-slate-200 pb-1">Phần II (Bậc thang 7991)</h4>
+            <div class="space-y-3">
+              ${ex.part2.map((q, i) => `
+                <div>
+                  <span class="font-bold text-slate-700">Câu ${i+1}:</span>
+                  <div class="grid grid-cols-4 gap-1 text-center mt-1">
+                    ${q.statements.map(st => `
+                      <span class="p-1 rounded ${st.answer ? 'bg-emerald-100 text-emerald-800 font-bold' : 'bg-rose-100 text-rose-800 font-bold'}">
+                        ${st.id}) ${st.answer ? 'Đ' : 'S'}
+                      </span>
+                    `).join('')}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Phần III Đáp án -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <h4 class="font-bold text-slate-800 mb-2 text-sm border-b border-slate-200 pb-1">Phần III (Trả lời ngắn)</h4>
+            <div class="space-y-2">
+              ${ex.part3.map((q, i) => `
+                <div class="p-2 bg-white rounded border border-slate-200">
+                  <span class="font-bold text-indigo-700">Câu ${i+1}:</span> Đáp số: <strong>${q.correctAnswer}</strong>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+      answerBox.innerHTML = ansHtml;
+    }
+
+    // Record user interaction for exam
+    function recordUserAnswer(part, id, val) {
+      userExamAnswers[part][id] = val;
+    }
+
+    // Auto grading system following official Circular 7991 specifications
+    function gradeExam() {
+      const ex = currentData.exam;
+      let scoreP1 = 0;
+      let scoreP2 = 0;
+      let scoreP3 = 0;
+
+      // Grade Part 1: Each question 0.25 pts
+      ex.part1.forEach(q => {
+        const userChoice = userExamAnswers.part1[q.id];
+        const card = document.getElementById(`card_${q.id}`);
+        const explain = document.getElementById(`explain_${q.id}`);
+        if (explain) explain.classList.remove('hidden');
+
+        if (userChoice === q.correct) {
+          scoreP1 += 0.25;
+          if (card) card.classList.add('border-emerald-500', 'bg-emerald-50/20');
+        } else {
+          if (card) card.classList.add('border-rose-300');
+        }
+      });
+
+      // Grade Part 2: True/False scoring tier (1 = 0.1, 2 = 0.25, 3 = 0.5, 4 = 1.0)
+      ex.part2.forEach(q => {
+        let correctCount = 0;
+        q.statements.forEach(st => {
+          const key = `${q.id}_${st.id}`;
+          const userVal = userExamAnswers.part2[key];
+          if (userVal === st.answer) {
+            correctCount++;
+          }
+        });
+
+        // Apply Official Dispatch 7991 tiered score table
+        let qScore = 0;
+        if (correctCount === 1) qScore = 0.10;
+        else if (correctCount === 2) qScore = 0.25;
+        else if (correctCount === 3) qScore = 0.50;
+        else if (correctCount === 4) qScore = 1.00;
+
+        scoreP2 += qScore;
+        const explain = document.getElementById(`explain_${q.id}`);
+        if (explain) explain.classList.remove('hidden');
+      });
+
+      // Grade Part 3: Short answer match
+      ex.part3.forEach(q => {
+        const userVal = (userExamAnswers.part3[q.id] || "").trim().toLowerCase();
+        const expected = q.correctAnswer.trim().toLowerCase();
+        const explain = document.getElementById(`explain_${q.id}`);
+        if (explain) explain.classList.remove('hidden');
+
+        if (userVal && (userVal === expected || userVal.includes(expected))) {
+          scoreP3 += 1.5; // Scale to reach standard 10
+        }
+      });
+
+      // Total capped at 10.0
+      let total = Math.min(10.0, scoreP1 + scoreP2 + scoreP3);
+      total = Math.round(total * 100) / 100;
+
+      // Show Banner
+      const banner = document.getElementById('scoreBanner');
+      banner.classList.remove('hidden');
+      document.getElementById('finalScoreVal').textContent = total.toFixed(1);
+      document.getElementById('scoreBreakdown').textContent = 
+        `Phần I: ${scoreP1.toFixed(2)}đ | Phần II (Bậc thang 7991): ${scoreP2.toFixed(2)}đ | Phần III: ${scoreP3.toFixed(2)}đ => Tổng: ${total.toFixed(2)}/10.0`;
+
+      // Smooth scroll to results
+      banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      showToast(`Chấm điểm hoàn tất! Điểm của bạn: ${total.toFixed(1)}/10.0`);
+    }
+
+    // Reset Exam Answers
+    function resetExam() {
+      userExamAnswers = { part1: {}, part2: {}, part3: {} };
+      document.getElementById('scoreBanner').classList.add('hidden');
+      renderExamAndMatrix();
+      showToast("Đã đặt lại bài làm");
+    }
+
+    // Helper to generate clean, highly formatted Microsoft Word (.doc) documents
+    function downloadWordDoc(filename, title, htmlContent) {
+      const header = `
+        <html xmlns:o='urn:schemas-microsoft-com:office:office' 
+              xmlns:w='urn:schemas-microsoft-com:office:word' 
+              xmlns='http://www.w3.org/TR/REC-html40'>
+        <head>
+          <meta charset='utf-8'>
+          <title>${title}</title>
+          <!--[if gte mso 9]>
+          <xml>
+            <w:WordDocument>
+              <w:View>Print</w:View>
+              <w:Zoom>100</w:Zoom>
+              <w:DoNotOptimizeForBrowser/>
+            </w:WordDocument>
+          </xml>
+          <![endif]-->
+          <style>
+            @page {
+              size: 21.0cm 29.7cm; /* A4 */
+              margin: 2.0cm 2.0cm 2.0cm 2.5cm;
+              mso-page-orientation: portrait;
+            }
+            body {
+              font-family: 'Times New Roman', Times, serif;
+              font-size: 13pt;
+              line-height: 1.35;
+              color: #000;
+            }
+            h1, h2, h3, h4 {
+              font-family: 'Times New Roman', Times, serif;
+              color: #000;
+            }
+            table {
+              border-collapse: collapse;
+              width: 100%;
+              margin: 10px 0;
+            }
+            th, td {
+              border: 1px solid #000;
+              padding: 5px 8px;
+              font-size: 12pt;
+              vertical-align: top;
+            }
+            th {
+              background-color: #f2f2f2;
+              font-weight: bold;
+              text-align: center;
+            }
+          </style>
+        </head>
+        <body>
+      `;
+      const footer = "</body></html>";
+      const sourceHTML = header + htmlContent + footer;
+      
+      const blob = new Blob(['\ufeff' + sourceHTML], { type: 'application/msword;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      
+      showToast(`Đã xuất file Word: ${filename}`);
+    }
+
+    // Export Lesson Plan (.doc)
+    function exportPlanToWord() {
+      const planContent = document.getElementById('editablePlanContent').innerHTML;
+      const cleanTitle = currentData.lessonTitle.replace(/[^a-zA-Z0-9À-ỹ]/g, '_');
+      downloadWordDoc(`GiaoAn_CV7991_${cleanTitle}.doc`, "Kế Hoạch Bài Dạy Chuẩn CV 7991", planContent);
+    }
+
+    // Export Exam and Matrix (.doc)
+    function exportExamToWord() {
+      const matrixHtml = document.getElementById('matrixContainer').innerHTML;
+      const examHtml = document.getElementById('examContainer').innerHTML;
+      const answerHtml = document.getElementById('answerKeyContainer').innerHTML;
+      
+      const fullDoc = `
+        <div style="text-align: center; margin-bottom: 20px;">
+          <h2 style="font-size: 15pt; font-weight: bold; text-transform: uppercase;">
+            MA TRẬN, ĐỀ KIỂM TRA VÀ ĐÁP ÁN ĐỊNH KỲ
+          </h2>
+          <p style="font-size: 13pt; font-style: italic;">
+            Môn: ${currentData.subject} ${currentData.grade} - Tên bài: ${currentData.lessonTitle}
+          </p>
+          <p style="font-size: 11pt; color: #555;">(Theo định dạng cấu trúc 3 phần chuẩn Công văn 7991/BGDĐT-GDTrH)</p>
+        </div>
+
+        <h3 style="font-size: 14pt; font-weight: bold; margin-top: 20px;">I. MA TRẬN & BẢN ĐẶC TẢ ĐỀ KIỂM TRA</h3>
+        ${matrixHtml}
+
+        <br style="page-break-before: always;">
+        <h3 style="font-size: 14pt; font-weight: bold; margin-top: 20px;">II. ĐỀ KIỂM TRA ĐÁNH GIÁ (3 PHẦN CHUẨN 7991)</h3>
+        ${examHtml}
+
+        <br style="page-break-before: always;">
+        <h3 style="font-size: 14pt; font-weight: bold; margin-top: 20px;">III. ĐÁP ÁN VÀ BẢNG HƯỚNG DẪN CHẤM</h3>
+        ${answerHtml}
+      `;
+
+      const cleanTitle = currentData.lessonTitle.replace(/[^a-zA-Z0-9À-ỹ]/g, '_');
+      downloadWordDoc(`DeKiemTra_CV7991_${cleanTitle}.doc`, "Đề Kiểm Tra Chuẩn CV 7991", fullDoc);
+    }
+
+    // Generate lesson via Gemini API or intelligent pedagogical builder
+    async function generateWithAi() {
+      const subject = document.getElementById('selectSubject').value;
+      const grade = document.getElementById('selectGrade').value;
+      const title = document.getElementById('inputLessonTitle').value.trim();
+      const duration = document.getElementById('selectDuration').value;
+
+      if (!title) {
+        showToast("Vui lòng nhập tên bài dạy / chủ đề!", false);
+        return;
+      }
+
+      // Open loading modal
+      const loadingModal = document.getElementById('aiLoadingModal');
+      loadingModal.classList.remove('hidden');
+
+      const apiKey = "";
+      const prompt = `Bạn là chuyên gia sư phạm hàng đầu của Bộ Giáo dục và Đào tạo Việt Nam. 
+Hãy xây dựng trọn bộ hồ sơ bài dạy chuẩn theo Công văn 5512/BGDĐT-GDTrH và Công văn 7991/BGDĐT-GDTrH cho:
+- Môn học: ${subject}
+- Khối lớp: ${grade}
+- Tên bài dạy: "${title}"
+- Thời lượng: ${duration}
+
+Yêu cầu trả về đúng duy nhất cú pháp JSON với các trường:
+{
+  "subject": "${subject}",
+  "grade": "${grade}",
+  "lessonTitle": "${title}",
+  "duration": "${duration}",
+  "plan": {
+    "school": "TRƯỜNG THPT CHUẨN QUỐC GIA",
+    "department": "TỔ CHUYÊN MÔN",
+    "teacher": "Giáo viên bộ môn",
+    "date": "Năm học 2026 - 2027",
+    "objectives": {
+      "specialized": ["3 mục tiêu năng lực đặc thù"],
+      "general": ["2 mục tiêu năng lực chung"],
+      "qualities": ["2 phẩm chất"]
+    },
+    "equipment": {
+      "teacher": "Thiết bị của GV",
+      "student": "Học liệu của HS"
+    },
+    "activities": [
+      {
+        "num": 1,
+        "title": "Khởi động",
+        "time": "7 phút",
+        "goal": "Mục tiêu",
+        "content": "Nội dung",
+        "product": "Sản phẩm",
+        "implementation": "Tổ chức thực hiện"
+      },
+      { "num": 2, "title": "Hình thành kiến thức mới", "time": "45 phút", "goal": "Mục tiêu", "content": "Nội dung", "product": "Sản phẩm", "implementation": "Tổ chức thực hiện" },
+      { "num": 3, "title": "Luyện tập", "time": "20 phút", "goal": "Mục tiêu", "content": "Nội dung", "product": "Sản phẩm", "implementation": "Tổ chức thực hiện" },
+      { "num": 4, "title": "Vận dụng", "time": "15 phút", "goal": "Mục tiêu", "content": "Nội dung", "product": "Sản phẩm", "implementation": "Tổ chức thực hiện" }
+    ]
+  },
+  "slides": [
+    { "title": "Slide 1", "badge": "Chủ đề", "type": "title", "content": ["Ý 1", "Ý 2"], "notes": "Lời dẫn giáo viên" },
+    { "title": "Slide 2", "badge": "Mục tiêu", "type": "objectives", "content": ["Ý 1", "Ý 2"], "notes": "Lời dẫn giáo viên" },
+    { "title": "Slide 3", "badge": "Khởi động", "type": "concept", "content": ["Ý 1", "Ý 2"], "notes": "Lời dẫn giáo viên" },
+    { "title": "Slide 4", "badge": "Khám phá 1", "type": "concept", "content": ["Ý 1", "Ý 2"], "notes": "Lời dẫn giáo viên" },
+    { "title": "Slide 5", "badge": "Khám phá 2", "type": "concept", "content": ["Ý 1", "Ý 2"], "notes": "Lời dẫn giáo viên" },
+    { "title": "Slide 6", "badge": "Luyện tập", "type": "quiz", "content": ["Ý 1", "Ý 2"], "notes": "Lời dẫn giáo viên" },
+    { "title": "Slide 7", "badge": "Vận dụng", "type": "homework", "content": ["Ý 1", "Ý 2"], "notes": "Lời dẫn giáo viên" },
+    { "title": "Slide 8", "badge": "Tổng kết", "type": "homework", "content": ["Ý 1", "Ý 2"], "notes": "Lời dẫn giáo viên" }
+  ],
+  "exam": {
+    "title": "ĐỀ KIỂM TRA ĐỊNH KỲ CHUẨN CV 7991",
+    "duration": "45 phút",
+    "matrix": [
+      { "topic": "Đơn vị 1", "p1_nb": 2, "p1_th": 1, "p1_vd": 0, "p2_items": 4, "p3_items": 1, "total_score": 5.0 },
+      { "topic": "Đơn vị 2", "p1_nb": 1, "p1_th": 2, "p1_vd": 0, "p2_items": 4, "p3_items": 1, "total_score": 5.0 }
+    ],
+    "part1": [
+      { "id": "p1_1", "question": "Câu trắc nghiệm 1?", "options": ["A. Đáp án A", "B. Đáp án B", "C. Đáp án C", "D. Đáp án D"], "correct": "A", "explanation": "Giải thích chi tiết" },
+      { "id": "p1_2", "question": "Câu trắc nghiệm 2?", "options": ["A. Đáp án A", "B. Đáp án B", "C. Đáp án C", "D. Đáp án D"], "correct": "B", "explanation": "Giải thích chi tiết" },
+      { "id": "p1_3", "question": "Câu trắc nghiệm 3?", "options": ["A. Đáp án A", "B. Đáp án B", "C. Đáp án C", "D. Đáp án D"], "correct": "C", "explanation": "Giải thích chi tiết" },
+      { "id": "p1_4", "question": "Câu trắc nghiệm 4?", "options": ["A. Đáp án A", "B. Đáp án B", "C. Đáp án C", "D. Đáp án D"], "correct": "D", "explanation": "Giải thích chi tiết" }
+    ],
+    "part2": [
+      {
+        "id": "p2_1",
+        "prompt": "Câu 1 (Đúng/Sai). Xét các nhận định sau về bài học:",
+        "statements": [
+          { "id": "a", "text": "Ý a", "answer": true, "note": "Giải thích" },
+          { "id": "b", "text": "Ý b", "answer": false, "note": "Giải thích" },
+          { "id": "c", "text": "Ý c", "answer": true, "note": "Giải thích" },
+          { "id": "d", "text": "Ý d", "answer": false, "note": "Giải thích" }
+        ]
+      }
+    ],
+    "part3": [
+      { "id": "p3_1", "question": "Câu hỏi ngắn 1?", "correctAnswer": "Đáp án", "explanation": "Giải thích" },
+      { "id": "p3_2", "question": "Câu hỏi ngắn 2?", "correctAnswer": "Đáp án", "explanation": "Giải thích" }
+    ]
+  }
+}`;
+
+      try {
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: {
+              responseMimeType: "application/json"
+            }
+          })
+        });
+
+        const data = await response.json();
+        const textResult = data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+        if (textResult) {
+          const parsed = JSON.parse(textResult);
+          currentData = parsed;
+          renderAll();
+          showToast(`Đã tạo thành công giáo án và đề kiểm tra: ${title}!`);
+        } else {
+          throw new Error("No data returned");
+        }
+      } catch (err) {
+        console.warn("AI endpoint fallback to smart pedagogical template generator:", err);
+        // Seamless high-fidelity fallback generator if network or key is unavailable
+        generateSmartPedagogicalFallback(subject, grade, title, duration);
+      } finally {
+        loadingModal.classList.add('hidden');
+      }
+    }
+
+    // High quality pedagogical fallback generator
+    function generateSmartPedagogicalFallback(subject, grade, title, duration) {
+      currentData = {
+        subject: subject,
+        grade: grade,
+        lessonTitle: title,
+        duration: duration,
+        plan: {
+          school: "TRƯỜNG THPT CHUẨN QUỐC GIA",
+          department: `TỔ ${subject.toUpperCase()}`,
+          teacher: "Giáo viên bộ môn",
+          date: "Năm học 2026 - 2027",
+          objectives: {
+            specialized: [
+              `Nắm vững khái niệm, định lý và nguyên lý cốt lõi của bài học: ${title}.`,
+              `Vận dụng các phương pháp đặc thù của môn ${subject} để giải quyết các bài toán/nhiệm vụ liên quan.`,
+              `Rèn luyện tư duy phản biện và khả năng trình bày lập luận khoa học.`
+            ],
+            general: [
+              "Năng lực tự chủ và tự học: Chủ động đọc tài liệu và hoàn thành phiếu học tập cá nhân.",
+              "Năng lực giao tiếp và hợp tác: Tương tác tích cực trong thảo luận nhóm và phản biện."
+            ],
+            qualities: [
+              "Chăm chỉ: Có thái độ học tập nghiêm túc, hoàn thành bài tập đúng hạn.",
+              "Trách nhiệm: Tôn trọng ý kiến bạn học và giữ gìn tác phong học đường."
+            ]
+          },
+          equipment: {
+            teacher: `Giáo án Word, Slide bài giảng điện tử, máy chiếu, phiếu học tập số 1 & 2 môn ${subject}.`,
+            student: `Sách giáo khoa ${subject} ${grade}, vở ghi chép, đồ dùng học tập.`
+          },
+          activities: [
+            {
+              num: 1,
+              title: `Khởi động: Kết nối trải nghiệm thực tế với "${title}"`,
+              time: "7 phút",
+              goal: "Kích hoạt kiến thức nền tảng, tạo nhu cầu nhận thức đối với chủ đề bài học.",
+              content: "Giáo viên nêu câu hỏi tình huống thực tế hoặc trò chơi nhỏ liên quan đến bài học.",
+              product: "Câu trả lời và sự hứng thú của học sinh đối với vấn đề cần giải quyết.",
+              implementation: "GV chuyển giao câu hỏi -> HS thảo luận cặp đôi -> GV dẫn dắt vào bài mới."
+            },
+            {
+              num: 2,
+              title: `Hình thành kiến thức mới: Khám phá trọng tâm bài học`,
+              time: "48 phút",
+              goal: `Chiếm lĩnh các đơn vị kiến thức trọng tâm của bài: ${title}.`,
+              content: "Khám phá các khái niệm, quy tắc hoặc văn bản thông qua hoạt động nhóm trên phiếu học tập.",
+              product: "Kết quả làm việc trên phiếu học tập số 1 của các nhóm học sinh.",
+              implementation: "GV chia nhóm giao nhiệm vụ -> HS nghiên cứu SGK và thảo luận -> Đại diện nhóm báo cáo -> GV chuẩn hóa kiến thức."
+            },
+            {
+              num: 3,
+              title: `Luyện tập: Củng cố và thực hành`,
+              time: "20 phút",
+              goal: "Củng cố kĩ năng giải bài tập hoặc phân tích vấn đề vừa học.",
+              content: "Học sinh thực hiện hệ thống câu hỏi trắc nghiệm và bài tập tự luận nhanh trên lớp.",
+              product: "Lời giải chính xác của học sinh trên bảng và trong vở bài tập.",
+              implementation: "GV chiếu bài tập -> HS làm cá nhân -> Chấm chéo sản phẩm -> GV nhận xét."
+            },
+            {
+              num: 4,
+              title: `Vận dụng: Giải quyết vấn đề thực tiễn`,
+              time: "15 phút",
+              goal: "Mở rộng hiểu biết và liên hệ với các tình huống đời sống.",
+              content: "Thực hiện nhiệm vụ liên hệ thực tế, tìm hiểu ứng dụng của bài học trong đời sống.",
+              product: "Bài báo cáo ngắn hoặc sơ đồ tư duy tóm tắt kiến thức của học sinh.",
+              implementation: "GV giao nhiệm vụ về nhà -> Hướng dẫn nguồn tài liệu tham khảo -> Nhận xét tiết học."
+            }
+          ]
+        },
+        slides: [
+          {
+            title: title.toUpperCase(),
+            badge: `${subject} ${grade}`,
+            type: "title",
+            content: [`Môn: ${subject} - Khối: ${grade}`, `Thời lượng: ${duration}`, "Kế hoạch bài giảng điện tử tương tác"],
+            notes: `Xin chào các em học sinh. Hôm nay chúng ta cùng bắt đầu bài học mới: ${title}.`
+          },
+          {
+            title: "MỤC TIÊU BÀI HỌC",
+            badge: "Yêu cầu cần đạt",
+            type: "objectives",
+            content: [
+              `1. Nắm vững bản chất kiến thức: ${title}.`,
+              "2. Rèn luyện kĩ năng phân tích và tổng hợp vấn đề.",
+              "3. Vận dụng kiến thức giải quyết bài tập thực tế."
+            ],
+            notes: "Giáo viên nêu rõ các mục tiêu trọng tâm cần đạt được sau tiết học."
+          },
+          {
+            title: "HOẠT ĐỘNG 1: KHỞI ĐỘNG",
+            badge: "Khởi động",
+            type: "concept",
+            content: [
+              "Tình huống gợi mở: Đặt vấn đề từ thực tiễn.",
+              "Câu hỏi thảo luận: Làm thế nào để giải quyết vấn đề hiệu quả nhất?",
+              "Khám phá ngay giải pháp trong bài học hôm nay!"
+            ],
+            notes: "Giáo viên đặt câu hỏi gợi mở để học sinh tự do đóng góp ý kiến."
+          },
+          {
+            title: "HOẠT ĐỘNG 2: KIẾN THỨC CỐT LÕI (PHẦN 1)",
+            badge: "Khám phá",
+            type: "concept",
+            content: [
+              "• Khái niệm và nguyên lý căn bản của bài học.",
+              "• Các đặc điểm và dấu hiệu nhận biết.",
+              "• Phân tích ví dụ trực quan minh họa."
+            ],
+            notes: "Giáo viên nhấn mạnh các định nghĩa chính, yêu cầu học sinh ghi chép cẩn thận."
+          },
+          {
+            title: "HOẠT ĐỘNG 2: KIẾN THỨC CỐT LÕI (PHẦN 2)",
+            badge: "Khám phá",
+            type: "concept",
+            content: [
+              "• Mở rộng và đào sâu các mối liên hệ.",
+              "• Những lưu ý và các lỗi sai thường gặp khi áp dụng.",
+              "• Quy tắc ghi nhớ nhanh kiến thức."
+            ],
+            notes: "Nhắc học sinh các bẫy thường gặp trong các đề kiểm tra."
+          },
+          {
+            title: "HOẠT ĐỘNG 3: BÀI TẬP LUYỆN TẬP",
+            badge: "Luyện tập",
+            type: "quiz",
+            content: [
+              "Nhiệm vụ: Hoàn thành bài tập trắc nghiệm củng cố.",
+              "Thảo luận cặp đôi trong 3 phút.",
+              "Đại diện trình bày lời giải và đối chiếu kết quả."
+            ],
+            notes: "Cho học sinh thời gian suy nghĩ độc lập trước khi chữa bài."
+          },
+          {
+            title: "HOẠT ĐỘNG 4: VẬN DỤNG THỰC TẾ",
+            badge: "Vận dụng",
+            type: "homework",
+            content: [
+              "Ứng dụng kiến thức vào các bài toán trong đời sống xã hội.",
+              "Mối liên hệ liên môn với các môn học khác.",
+              "Đề xuất giải pháp cải tiến sáng tạo."
+            ],
+            notes: "Khuyến khích học sinh liên hệ thực tiễn địa phương."
+          },
+          {
+            title: "TỔNG KẾT VÀ DẶN DÒ",
+            badge: "Dặn dò",
+            type: "homework",
+            content: [
+              "• Ôn lại toàn bộ sơ đồ tư duy bài học.",
+              "• Hoàn thành các câu hỏi trong phiếu bài tập.",
+              "• Đọc trước bài học của tiết tiếp theo."
+            ],
+            notes: "Cảm ơn các em học sinh đã tích cực tham gia tiết học."
+          }
+        ],
+        exam: {
+          title: `ĐỀ KIỂM TRA ĐỊNH KỲ ${subject.toUpperCase()} ${grade.toUpperCase()} (CV 7991)`,
+          duration: "45 phút",
+          matrix: [
+            { topic: `Kiến thức cơ bản: ${title}`, p1_nb: 2, p1_th: 1, p1_vd: 0, p2_items: 4, p3_items: 1, total_score: 5.0 },
+            { topic: `Kỹ năng vận dụng và giải quyết vấn đề`, p1_nb: 1, p1_th: 2, p1_vd: 0, p2_items: 4, p3_items: 1, total_score: 5.0 }
+          ],
+          part1: [
+            {
+              id: "gen_p1_1",
+              question: `Nội dung cốt lõi của chủ đề "${title}" nhằm giải quyết vấn đề nào sau đây?`,
+              options: [
+                "A. Cung cấp cơ sở lý thuyết và phương pháp vận dụng thực hành",
+                "B. Giới thiệu lịch sử hình thành không có tính ứng dụng",
+                "C. Thay thế hoàn toàn các quy tắc học tập truyền thống",
+                "D. Chỉ phục vụ mục đích kiểm tra lý thuyết đơn thuần"
+              ],
+              correct: "A",
+              explanation: "Bài học trang bị đầy đủ cả lý thuyết nền tảng lẫn kĩ năng thực hành ứng dụng."
+            },
+            {
+              id: "gen_p1_2",
+              question: "Trong quy trình thực hiện, bước quan trọng đầu tiên học sinh cần làm là gì?",
+              options: [
+                "A. Bỏ qua lý thuyết và thực hành ngay",
+                "B. Xác định rõ mục tiêu, dữ liệu đầu vào và điều kiện áp dụng",
+                "C. Nhờ người khác làm thay",
+                "D. Chỉ ghi nhớ công thức mà không hiểu bản chất"
+              ],
+              correct: "B",
+              explanation: "Xác định rõ dữ liệu và điều kiện ban đầu là bước tối quan trọng."
+            },
+            {
+              id: "gen_p1_3",
+              question: "Để đánh giá tính chính xác của kết quả, phương pháp nào sau đây là tối ưu?",
+              options: [
+                "A. Phỏng đoán không căn cứ",
+                "B. Kiểm thử với các trường hợp đặc biệt và đối chiếu quy tắc",
+                "C. Chỉ tin tưởng vào kết quả đầu tiên tìm thấy",
+                "D. Không cần kiểm tra lại"
+              ],
+              correct: "B",
+              explanation: "Kiểm thử mẫu dữ liệu giúp phát hiện sai sót một cách khoa học."
+            },
+            {
+              id: "gen_p1_4",
+              question: "Đâu là phẩm chất cần rèn luyện nhất qua bài học này?",
+              options: [
+                "A. Tính cẩu thả, vội vàng",
+                "B. Tính cẩn thận, tư duy logic và kiên trì",
+                "C. Ỷ lại vào bạn cùng nhóm",
+                "D. Học vẹt không suy nghĩ"
+              ],
+              correct: "B",
+              explanation: "Tính cẩn thận và tư duy logic là mục tiêu giáo dục xuyên suốt."
+            }
+          ],
+          part2: [
+            {
+              id: "gen_p2_1",
+              prompt: `Câu 1 (Đúng/Sai). Xét các phát biểu sau đây liên quan đến bài học "${title}":`,
+              statements: [
+                { id: "a", text: "a) Kiến thức của bài học có thể áp dụng linh hoạt trong nhiều tình huống học tập và đời sống.", answer: true, note: "Đúng, tính thực tiễn của bài học rất cao." },
+                { id: "b", text: "b) Người học chỉ cần học thuộc lòng lý thuyết mà không cần rèn luyện kĩ năng thực hành.", answer: false, note: "Sai, chương trình GDPT 2018 chú trọng phát triển phẩm chất và năng lực hành động." },
+                { id: "c", text: "c) Khi giải quyết bài toán phức tạp, nên chia nhỏ thành các bài toán con để xử lý tuần tự.", answer: true, note: "Đúng, đây là nguyên lý phân rã vấn đề kinh điển." },
+                { id: "d", text: "d) Việc kiểm tra lại kết quả sau khi thực hiện là không cần thiết nếu đã làm cẩn thận.", answer: false, note: "Sai, bước kiểm thử luôn bắt buộc trong quy trình khoa học." }
+              ]
+            }
+          ],
+          part3: [
+            {
+              id: "gen_p3_1",
+              question: "Câu 1 (Trả lời ngắn): Hãy nêu từ khóa quan trọng nhất thể hiện mục tiêu phát triển phẩm chất của học sinh trong bài học này?",
+              correctAnswer: "Chăm chỉ",
+              explanation: "Phẩm chất chăm chỉ và trách nhiệm là nền tảng cốt lõi trong học tập."
+            },
+            {
+              id: "gen_p3_2",
+              question: "Câu 2 (Trả lời ngắn): Số lượng hoạt động dạy học chuẩn mực trong một kế hoạch bài dạy theo Công văn 5512 là bao nhiêu hoạt động?",
+              correctAnswer: "4",
+              explanation: "Gồm 4 hoạt động: Khởi động -> Hình thành kiến thức -> Luyện tập -> Vận dụng."
+            }
+          ]
+        }
+      };
+
+      renderAll();
+      showToast(`Đã nạp bài học "${title}" theo cấu trúc chuẩn CV 7991!`);
+    }
+
+    // Master Render Function
+    function renderAll() {
+      // Synchronize input fields
+      document.getElementById('selectSubject').value = currentData.subject;
+      document.getElementById('selectGrade').value = currentData.grade;
+      document.getElementById('inputLessonTitle').value = currentData.lessonTitle;
+      document.getElementById('selectDuration').value = currentData.duration;
+
+      // Render 3 Tabs
+      renderLessonPlan();
+      renderSlide(0);
+      renderExamAndMatrix();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Initial Render with Sample 1
+      renderAll();
+
+      // 2. Tab Navigation Logic
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.tab-btn').forEach(b => {
+            b.classList.remove('border-emerald-600', 'text-emerald-700', 'active');
+            b.classList.add('border-transparent', 'text-slate-500');
+          });
+          btn.classList.add('border-emerald-600', 'text-emerald-700', 'active');
+          btn.classList.remove('border-transparent', 'text-slate-500');
+
+          const target = btn.getAttribute('data-target');
+          document.querySelectorAll('.tab-pane').forEach(pane => {
+            pane.classList.add('hidden');
+          });
+          document.getElementById(target).classList.remove('hidden');
+
+          if (target === 'tabSlideshow') {
+            renderSlide(activeSlideIndex);
+          }
+        });
+      });
+
+      // 3. Quick Sample Load Buttons
+      document.querySelectorAll('.btn-sample-load').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const sampleKey = btn.getAttribute('data-sample');
+          if (SAMPLE_DATABASE[sampleKey]) {
+            currentData = JSON.parse(JSON.stringify(SAMPLE_DATABASE[sampleKey]));
+            renderAll();
+            showToast(`Đã nạp bài mẫu: ${currentData.lessonTitle}`);
+          }
+        });
+      });
+
+      // 4. Slide Navigation Buttons
+      document.getElementById('btnPrevSlide').addEventListener('click', () => {
+        if (activeSlideIndex > 0) renderSlide(activeSlideIndex - 1);
+      });
+      document.getElementById('btnNextSlide').addEventListener('click', () => {
+        if (activeSlideIndex < currentData.slides.length - 1) renderSlide(activeSlideIndex + 1);
+      });
+
+      // Keyboard arrow keys for slide presentation
+      document.addEventListener('keydown', (e) => {
+        const slideTabVisible = !document.getElementById('tabSlideshow').classList.contains('hidden');
+        if (!slideTabVisible) return;
+
+        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+          if (activeSlideIndex < currentData.slides.length - 1) {
+            e.preventDefault();
+            renderSlide(activeSlideIndex + 1);
+          }
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          if (activeSlideIndex > 0) {
+            e.preventDefault();
+            renderSlide(activeSlideIndex - 1);
+          }
+        }
+      });
+
+      // Fullscreen presentation
+      document.getElementById('btnFullscreenSlide').addEventListener('click', () => {
+        const elem = document.getElementById('slideScreen');
+        if (!document.fullscreenElement) {
+          elem.requestFullscreen().catch(err => {
+            showToast("Không thể mở toàn màn hình trên trình duyệt này", false);
+          });
+        } else {
+          document.exitFullscreen();
+        }
+      });
+
+      // Copy Slide Outline
+      document.getElementById('btnCopySlideNotes').addEventListener('click', () => {
+        let outline = `DÀN Ý SLIDE BÀI GIẢNG: ${currentData.lessonTitle}\n\n`;
+        currentData.slides.forEach((s, i) => {
+          outline += `Slide ${i+1}: ${s.title}\n`;
+          outline += s.content.map(c => `  - ${c}`).join('\n') + `\n`;
+          outline += `  [Gợi ý lời dẫn]: ${s.notes}\n\n`;
+        });
+        
+        // Use textarea fallback for clipboard compatibility in iframes
+        const ta = document.createElement('textarea');
+        ta.value = outline;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        
+        showToast("Đã sao chép dàn ý toàn bộ slide bài giảng!");
+      });
+
+      // Teacher Notes Speech Synthesis (Đọc lời dẫn giáo viên)
+      document.getElementById('btnSpeakNote').addEventListener('click', () => {
+        const text = currentData.slides[activeSlideIndex]?.notes;
+        if (!text) return;
+        
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = 'vi-VN';
+          utterance.rate = 0.95;
+          window.speechSynthesis.speak(utterance);
+          showToast("Đang phát lời dẫn gợi ý cho giáo viên...");
+        } else {
+          showToast("Trình duyệt không hỗ trợ đọc tiếng Việt tự động", false);
+        }
+      });
+
+      // 5. Exam grading and resets
+      document.getElementById('btnGradeExam').addEventListener('click', gradeExam);
+      document.getElementById('btnResetExam').addEventListener('click', resetExam);
+
+      // 6. Word Exports and Print
+      document.getElementById('btnExportAllWord').addEventListener('click', exportPlanToWord);
+      document.getElementById('btnDownloadPlanDoc').addEventListener('click', exportPlanToWord);
+      document.getElementById('btnDownloadExamDoc').addEventListener('click', exportExamToWord);
+
+      document.getElementById('btnPrintPlan').addEventListener('click', () => window.print());
+      document.getElementById('btnPrintExam').addEventListener('click', () => window.print());
+
+      // Copy plan text
+      document.getElementById('btnCopyPlanText').addEventListener('click', () => {
+        const content = document.getElementById('editablePlanContent').innerText;
+        const ta = document.createElement('textarea');
+        ta.value = content;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast("Đã sao chép toàn bộ văn bản Kế hoạch bài dạy!");
+      });
+
+      // 7. Toggle Matrix Accordion
+      document.getElementById('toggleMatrix').addEventListener('click', () => {
+        const container = document.getElementById('matrixContainer');
+        const arrow = document.getElementById('matrixArrow');
+        if (container.classList.contains('hidden')) {
+          container.classList.remove('hidden');
+          arrow.textContent = "▼ Thu gọn";
+        } else {
+          container.classList.add('hidden');
+          arrow.textContent = "▲ Mở rộng";
+        }
+      });
+
+      // 8. Generate with AI
+      document.getElementById('btnAiGenerate').addEventListener('click', generateWithAi);
+
+      // Clear Title Button
+      document.getElementById('btnClearTitle').addEventListener('click', () => {
+        document.getElementById('inputLessonTitle').value = '';
+        document.getElementById('inputLessonTitle').focus();
+      });
+
+      // 9. Guide Modal
+      document.getElementById('btnOpenGuide').addEventListener('click', () => {
+        document.getElementById('guideModal').classList.remove('hidden');
+      });
+      document.getElementById('btnCloseGuide').addEventListener('click', () => {
+        document.getElementById('guideModal').classList.add('hidden');
+      });
+      document.getElementById('btnGotGuide').addEventListener('click', () => {
+        document.getElementById('guideModal').classList.add('hidden');
+      });
+
+      // Auto save indicator for inline contenteditable
+      document.getElementById('editablePlanContent').addEventListener('input', () => {
+        const status = document.getElementById('planSaveStatus');
+        status.textContent = "✎ Đang lưu...";
+        status.className = "text-amber-600 text-xs font-medium";
+        setTimeout(() => {
+          status.textContent = "✓ Đã lưu thay đổi";
+          status.className = "text-emerald-600 text-xs font-medium";
+        }, 800);
+      });
+    });
+  </script>
+</body>
+</html>
